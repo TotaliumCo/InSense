@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.insense.MainFragment"
+        android:name="com.example.insense.ui.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -19,10 +19,16 @@
         <action
             android:id="@+id/action_mainFragment_to_categoriesFragment"
             app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_bindingFragment"
+            app:destination="@id/bindingFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.insense.LoginFragment"
+        android:name="com.example.insense.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -31,17 +37,21 @@
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
-        android:name="com.example.insense.CalendarFragment"
+        android:name="com.example.insense.ui.fragments.CalendarFragment"
         android:label="fragment_calendar"
-        tools:layout="@layout/fragment_calendar" />
+        tools:layout="@layout/fragment_calendar" >
+        <action
+            android:id="@+id/action_calendarFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.insense.ProfileFragment"
+        android:name="com.example.insense.ui.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/categoriesFragment"
-        android:name="com.example.insense.CategoriesFragment"
+        android:name="com.example.insense.ui.fragments.CategoriesFragment"
         android:label="fragment_categories"
         tools:layout="@layout/fragment_categories" >
         <action
@@ -50,16 +60,69 @@
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.example.insense.CategoryFragment"
+        android:name="com.example.insense.ui.fragments.CategoryFragment"
         android:label="fragment_category"
         tools:layout="@layout/fragment_category" >
         <action
             android:id="@+id/action_categoryFragment_to_occupationFragment"
             app:destination="@id/occupationFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_importFragment"
+            app:destination="@id/importFragment" />
     </fragment>
     <fragment
         android:id="@+id/occupationFragment"
-        android:name="com.example.insense.OccupationFragment"
+        android:name="com.example.insense.ui.fragments.OccupationFragment"
         android:label="fragment_occupation"
-        tools:layout="@layout/fragment_occupation" />
+        tools:layout="@layout/fragment_occupation" >
+        <action
+            android:id="@+id/action_occupationFragment_to_occupationExportFragment"
+            app:destination="@id/occupationExportFragment" />
+        <action
+            android:id="@+id/action_occupationFragment_to_rateOfOccupationFragment"
+            app:destination="@id/rateOfOccupationFragment" />
+        <action
+            android:id="@+id/action_occupationFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_occupationFragment_to_exportFragment"
+            app:destination="@id/exportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/occupationExportFragment"
+        android:name="com.example.insense.ui.fragments.OccupationExportFragment"
+        android:label="fragment_occupation_export"
+        tools:layout="@layout/fragment_occupation_export" />
+    <fragment
+        android:id="@+id/rateOfOccupationFragment"
+        android:name="com.example.insense.ui.fragments.RateOfOccupationFragment"
+        android:label="fragment_rate_of_occupation"
+        tools:layout="@layout/fragment_rate_of_occupation" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.example.insense.ui.fragments.ActivityFragment"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity" >
+        <action
+            android:id="@+id/action_activityFragment_to_bindingFragment"
+            app:destination="@id/bindingFragment" />
+        <action
+            android:id="@+id/action_activityFragment_to_bindingFragment2"
+            app:destination="@id/bindingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/importFragment"
+        android:name="com.example.insense.ui.fragments.ImportFragment"
+        android:label="fragment_import"
+        tools:layout="@layout/fragment_import" />
+    <fragment
+        android:id="@+id/exportFragment"
+        android:name="com.example.insense.ui.fragments.ExportFragment"
+        android:label="fragment_export"
+        tools:layout="@layout/fragment_export" />
+    <fragment
+        android:id="@+id/bindingFragment"
+        android:name="com.example.insense.ui.fragments.BindingFragment"
+        android:label="fragment_binding"
+        tools:layout="@layout/fragment_binding" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.insense;
+package com.example.insense.ui.fragments;
 
 import android.os.Bundle;
 
@@ -8,12 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.insense.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link OccupationFragment#newInstance} factory method to
+ * Use the {@link ImportFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class OccupationFragment extends Fragment {
+public class ImportFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +26,7 @@ public class OccupationFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public OccupationFragment() {
+    public ImportFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +36,11 @@ public class OccupationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment OccupationFragment.
+     * @return A new instance of fragment ImportFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static OccupationFragment newInstance(String param1, String param2) {
-        OccupationFragment fragment = new OccupationFragment();
+    public static ImportFragment newInstance(String param1, String param2) {
+        ImportFragment fragment = new ImportFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +61,6 @@ public class OccupationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_occupation, container, false);
+        return inflater.inflate(R.layout.fragment_import, container, false);
     }
 }
