@@ -1,8 +1,10 @@
-package com.example.insense;
+package com.example.insense.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.insense.R;
 
 public class MainActivity extends AppCompatActivity {
 
