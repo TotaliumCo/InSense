@@ -1,4 +1,4 @@
-package com.example.insense.ui.fragments;
+package com.example.insense.ui.fragments.Activity;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.insense.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BindingFragment#newInstance} factory method to
+ * Use the {@link ActivityFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BindingFragment extends Fragment {
+public class ActivityFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class BindingFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public BindingFragment() {
+    public ActivityFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class BindingFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment BindingFragment.
+     * @return A new instance of fragment ActivityFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static BindingFragment newInstance(String param1, String param2) {
-        BindingFragment fragment = new BindingFragment();
+    public static ActivityFragment newInstance(String param1, String param2) {
+        ActivityFragment fragment = new ActivityFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class BindingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_binding, container, false);
+        return inflater.inflate(R.layout.fragment_activity, container, false);
     }
 }

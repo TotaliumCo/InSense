@@ -1,4 +1,4 @@
-package com.example.insense.ui.activity;
+package com.example.insense.ui.main_activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

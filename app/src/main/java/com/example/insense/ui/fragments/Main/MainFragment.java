@@ -1,4 +1,4 @@
-package com.example.insense.ui.fragments;
+package com.example.insense.ui.fragments.Main;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import com.example.insense.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link RateOfOccupationFragment#newInstance} factory method to
+ * Use the {@link MainFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class RateOfOccupationFragment extends Fragment {
+public class MainFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class RateOfOccupationFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public RateOfOccupationFragment() {
+    public MainFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class RateOfOccupationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment RateOfOccupationFragment.
+     * @return A new instance of fragment MainFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static RateOfOccupationFragment newInstance(String param1, String param2) {
-        RateOfOccupationFragment fragment = new RateOfOccupationFragment();
+    public static MainFragment newInstance(String param1, String param2) {
+        MainFragment fragment = new MainFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class RateOfOccupationFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_rate_of_occupation, container, false);
+        return inflater.inflate(R.layout.fragment_main, container, false);
     }
 }
