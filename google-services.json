@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "340404397573",
+    "project_id": "insense-bf353",
+    "storage_bucket": "insense-bf353.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340404397573:android:56459cf0ec3d29286ede6c",
+        "android_client_info": {
+          "package_name": "com.example.insense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "340404397573-ugfm9322cl5mhpe0ounmjcpl66ilf39d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.insense",
+            "certificate_hash": "fe7bf28c53d92291187e9b028a7aa10139012ac4"
+          }
+        },
+        {
+          "client_id": "340404397573-na7vcm675olkosqmdcenehpv6f1vjdo3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu1AHj_vDA-iXDJJxOQ8OvCx4n78d6tYw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "340404397573-na7vcm675olkosqmdcenehpv6f1vjdo3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
