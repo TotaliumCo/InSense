@@ -1,5 +1,6 @@
 package com.example.insense.ui.fragments.Login;
 
+import android.os.Binder;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.insense.R;
+import com.example.insense.ui.fragments.Binding.BindingFragment;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,8 +25,10 @@ public class LoginFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private LoginViewModel viewModel = new LoginViewModel();
+
+    private LoginFragment binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+
 
     public LoginFragment() {
         // Required empty public constructor
@@ -52,8 +56,6 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
