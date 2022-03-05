@@ -3,14 +3,20 @@ package com.example.insense.ui.fragments.Login;
 import android.os.Binder;
 import android.os.Bundle;
 
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.navigation.Navigation;
+
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.insense.R;
+import com.example.insense.databinding.FragmentLoginBinding;
 import com.example.insense.ui.fragments.Binding.BindingFragment;
+import static androidx.navigation.Navigation.findNavController;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,7 +33,7 @@ public class LoginFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private LoginViewModel viewModel = new LoginViewModel();
 
-    private LoginFragment binding = DataBindingUtil.setContentView(this, R.layout.main_activity);
+    private FragmentLoginBinding binding = DataBindingUtil.setContentView(getActivity(), R.layout.fragment_login);
 
 
     public LoginFragment() {
@@ -62,7 +68,43 @@ public class LoginFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false);
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login,container,false);
+        return binding.getRoot();
     }
+    final Observer<String> nameObserver = new Observer<String>() {
+        @Override
+        public void onChanged(final String newName) {
+
+        }
+    };
+
+    private void observeAuthenticationState(View view) {
+        viewModel.authenticationState.observe(getViewLifecycleOwner(), authenticationState ->{
+            if(authenticationState == LoginViewModel.AuthenticationState.AUTHENTICATED){
+                binding.accountButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Navigation.findNavController(view).navigate(R.id.mainFragment);
+                    }
+                });
+
+
+            }else{
+                binding.accountButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Navigation.findNavController(view).navigate(R.id.loginFragment);
+                    }
+                });
+            }
+
+        }  );
+    }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState){
+        super.onViewCreated(view,savedInstanceState);
+        observeAuthenticationState(view);
+    }
+
+
 }
