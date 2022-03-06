@@ -33,11 +33,11 @@ public class LoginFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private LoginViewModel viewModel = new LoginViewModel();
 
-    private FragmentLoginBinding binding = DataBindingUtil.setContentView(getActivity(), R.layout.fragment_login);
+    private FragmentLoginBinding binding;
 
 
     public LoginFragment() {
-        // Required empty public constructor
+        // Required empty public constructorww
     }
 
     /**
