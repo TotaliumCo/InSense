@@ -3,13 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.insense.ui.fragments.Login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.insense.ui.fragments.Main.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_calendarFragment"
             app:destination="@id/calendarFragment" />
@@ -27,19 +37,10 @@
             app:destination="@id/bindingFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.insense.ui.fragments.Login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
-        <action
-            android:id="@+id/action_loginFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.insense.ui.fragments.Calendar.CalendarFragment"
         android:label="fragment_calendar"
-        tools:layout="@layout/fragment_calendar" >
+        tools:layout="@layout/fragment_calendar">
         <action
             android:id="@+id/action_calendarFragment_to_activityFragment"
             app:destination="@id/activityFragment" />
@@ -53,7 +54,7 @@
         android:id="@+id/categoriesFragment"
         android:name="com.example.insense.ui.fragments.Categories.CategoriesFragment"
         android:label="fragment_categories"
-        tools:layout="@layout/fragment_categories" >
+        tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categoriesFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
@@ -62,7 +63,7 @@
         android:id="@+id/categoryFragment"
         android:name="com.example.insense.ui.fragments.Category.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" >
+        tools:layout="@layout/fragment_category">
         <action
             android:id="@+id/action_categoryFragment_to_occupationFragment"
             app:destination="@id/occupationFragment" />
@@ -74,7 +75,7 @@
         android:id="@+id/occupationFragment"
         android:name="com.example.insense.ui.fragments.Occupation.OccupationFragment"
         android:label="fragment_occupation"
-        tools:layout="@layout/fragment_occupation" >
+        tools:layout="@layout/fragment_occupation">
         <action
             android:id="@+id/action_occupationFragment_to_rateOfOccupationFragment"
             app:destination="@id/rateOfOccupationFragment" />
@@ -94,7 +95,7 @@
         android:id="@+id/activityFragment"
         android:name="com.example.insense.ui.fragments.Activity.ActivityFragment"
         android:label="fragment_activity"
-        tools:layout="@layout/fragment_activity" >
+        tools:layout="@layout/fragment_activity">
         <action
             android:id="@+id/action_activityFragment_to_bindingFragment"
             app:destination="@id/bindingFragment" />
