@@ -8,57 +8,28 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment">
+    tools:context=".Main.LoginFragment">
+
 
         <TextView
             android:id="@+id/tv_login_promt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="whats up fcukers"
+            android:text="In sense"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.094" />
-
-        <EditText
-            android:id="@+id/e_mail"
-            android:layout_width="300sp"
-            android:layout_height="50sp"
-            android:layout_marginTop="100dp"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintBottom_toTopOf="@+id/password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_login_promt" />
-
-        <EditText
-            android:id="@+id/password"
-            android:layout_width="300sp"
-            android:layout_height="50sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="65dp"
-            app:layout_constraintBottom_toTopOf="@+id/account_button"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/e_mail" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/account_button"
+            android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
             android:text="login"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password" />
-
+            app:layout_constraintTop_toBottomOf="@+id/tv_login_promt" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
