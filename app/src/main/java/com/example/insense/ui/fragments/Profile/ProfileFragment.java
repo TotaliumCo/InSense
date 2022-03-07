@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,7 @@ import com.example.insense.R;
 import com.example.insense.databinding.FragmentProfileBinding;
 import com.example.insense.databinding.FragmentProfileBindingImpl;
 import com.example.insense.ui.fragments.Login.LoginViewModel;
+import com.firebase.ui.auth.AuthUI;
 
 
 public class ProfileFragment extends Fragment {
@@ -22,14 +25,23 @@ public class ProfileFragment extends Fragment {
     LoginViewModel viewModel = new LoginViewModel();
     FragmentProfileBinding binding;
 
-    public ProfileFragment() {}
+    private NavController navController;
 
-    void observeAuthenticationState(){}
-
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
+    void observeAuthenticationState(){
+        viewModel.authenticationState.observe(getViewLifecycleOwner(), authenticationState -> {
+            if(authenticationState == LoginViewModel.AuthenticationState.AUTHENTICATED){
+                binding.logoutButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AuthUI.getInstance().signOut(requireContext());
+                        navController.popBackStack();
+                    }
+                });
+            }
+        });
     }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,6 +54,7 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        observeAuthentication stat
+        observeAuthenticationState();
     }
+
 }
