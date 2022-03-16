@@ -16,11 +16,10 @@ final class LoginViewModel2$$special$$inlined$map$1 implements Function {
 }
 
 public class LoginViewModel extends ViewModel {
-    enum AuthenticationState {
+    public enum AuthenticationState {
         AUTHENTICATED, UNAUTHENTICATED, INVALID_AUTHENTICATION
     }
 
-     LiveData authenticationState = Transformations.map((LiveData)(new FirebaseUserLiveData()),
-             (Function)(new LoginViewModel2$$special$$inlined$map$1()));
+     public LiveData authenticationState = Transformations.map((LiveData)(new FirebaseUserLiveData()), (Function)(new LoginViewModel2$$special$$inlined$map$1()));
 
 }

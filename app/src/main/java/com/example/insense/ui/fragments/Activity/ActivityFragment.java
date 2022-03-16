@@ -64,3 +64,9 @@ public class ActivityFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_activity, container, false);
     }
 }
+class DrawThread extends Thread{
+    @Override
+    public void run() {
+        super.run();
+    }
+}

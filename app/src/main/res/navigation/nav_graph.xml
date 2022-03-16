@@ -2,8 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    android:id="@+id/nav_graph">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -49,7 +48,11 @@
         android:id="@+id/profileFragment"
         android:name="com.example.insense.ui.fragments.Profile.ProfileFragment"
         android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.example.insense.ui.fragments.Categories.CategoriesFragment"
@@ -118,4 +121,16 @@
         android:name="com.example.insense.ui.fragments.Binding.BindingFragment"
         android:label="fragment_binding"
         tools:layout="@layout/fragment_binding" />
+    <fragment
+        android:id="@+id/starterFragment"
+        android:name="com.example.insense.ui.fragments.Login.StarterFragment"
+        android:label="fragment_starter"
+        tools:layout="@layout/fragment_starter" >
+        <action
+            android:id="@+id/action_starterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_starterFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>
