@@ -5,31 +5,37 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Main.LoginFragment">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".LoginFragment">
 
+                <Button
+                    android:id="@+id/signin"
+                    android:layout_width="227dp"
+                    android:layout_height="54dp"
+                    android:layout_marginStart="92dp"
+                    android:layout_marginTop="450dp"
+                    android:layout_marginEnd="92dp"
+                    android:layout_marginBottom="12dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toTopOf="@+id/signup"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tv_login_promt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="In sense"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="login"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_login_promt" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/signup"
+                    android:layout_width="178dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="117dp"
+                    android:layout_marginTop="31dp"
+                    android:layout_marginEnd="117dp"
+                    android:layout_marginBottom="159dp"
+                    android:text="Button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/signin" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -4,7 +4,7 @@ import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
-
+import androidx.lifecycle.Transformations.*;
 import com.example.insense.services.authentification.FirebaseUserLiveData;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -20,7 +20,6 @@ public class LoginViewModel extends ViewModel {
         AUTHENTICATED, UNAUTHENTICATED, INVALID_AUTHENTICATION
     }
 
-     public LiveData authenticationState = Transformations.map((LiveData)(new FirebaseUserLiveData()),
-             (Function)(new LoginViewModel2$$special$$inlined$map$1()));
+     public LiveData authenticationState = Transformations.map((LiveData)(new FirebaseUserLiveData()), (Function)(new LoginViewModel2$$special$$inlined$map$1()));
 
 }
