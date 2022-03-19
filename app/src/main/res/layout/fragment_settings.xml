@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0F0635"
+        tools:context=".ui.fragments.Settings.SettingsFragment">
+
+        <ImageButton
+            android:id="@+id/button_back_settings"
+            android:layout_width="80dp"
+            android:layout_height="60dp"
+
+            android:backgroundTint="#29E1CD"
+            android:scaleType="centerCrop"
+            android:src="@drawable/button_back"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+
+            android:textColor="#0B1637"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="124dp"
+            android:layout_marginTop="260dp"
+            android:text="It is settings"
+            android:textColor="#29E1CD"
+            android:textSize="35sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>

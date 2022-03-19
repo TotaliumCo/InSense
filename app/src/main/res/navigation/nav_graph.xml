@@ -2,12 +2,14 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/settingsFragment">
 
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.insense.ui.fragments.Login.LoginFragment"
-        android:label="fragment_login"
+        android:label="Авторизация"
+
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
@@ -17,7 +19,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.insense.ui.fragments.Main.MainFragment"
-        android:label="fragment_main"
+        android:label="Домашняя страница"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_calendarFragment"
@@ -38,34 +40,64 @@
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.insense.ui.fragments.Calendar.CalendarFragment"
-        android:label="fragment_calendar"
+        android:label="Календарь"
         tools:layout="@layout/fragment_calendar">
         <action
             android:id="@+id/action_calendarFragment_to_activityFragment"
             app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.insense.ui.fragments.Profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Профиль"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.example.insense.ui.fragments.Categories.CategoriesFragment"
-        android:label="fragment_categories"
+        android:label="Категории"
         tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categoriesFragment_to_categoryFragment"
             app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
     </fragment>
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.example.insense.ui.fragments.Category.CategoryFragment"
-        android:label="fragment_category"
+        android:label="Категория"
         tools:layout="@layout/fragment_category">
         <action
             android:id="@+id/action_categoryFragment_to_occupationFragment"
@@ -132,5 +164,14 @@
         <action
             android:id="@+id/action_starterFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.insense.ui.Settings.SettingsFragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 </navigation>
