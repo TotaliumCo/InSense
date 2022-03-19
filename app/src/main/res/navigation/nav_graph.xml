@@ -8,7 +8,8 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.insense.ui.fragments.Login.LoginFragment"
-        android:label="fragment_login"
+        android:label="Авторизация"
+
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
@@ -18,7 +19,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.insense.ui.fragments.Main.MainFragment"
-        android:label="fragment_main"
+        android:label="Домашняя страница"
         tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_calendarFragment"
@@ -39,7 +40,7 @@
     <fragment
         android:id="@+id/calendarFragment"
         android:name="com.example.insense.ui.fragments.Calendar.CalendarFragment"
-        android:label="fragment_calendar"
+        android:label="Календарь"
         tools:layout="@layout/fragment_calendar">
         <action
             android:id="@+id/action_calendarFragment_to_activityFragment"
@@ -57,7 +58,7 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.insense.ui.fragments.Profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Профиль"
         tools:layout="@layout/fragment_profile" >
         <action
             android:id="@+id/action_profileFragment_to_loginFragment"
@@ -78,7 +79,7 @@
     <fragment
         android:id="@+id/categoriesFragment"
         android:name="com.example.insense.ui.fragments.Categories.CategoriesFragment"
-        android:label="fragment_categories"
+        android:label="Категории"
         tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categoriesFragment_to_categoryFragment"
@@ -96,7 +97,7 @@
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.example.insense.ui.fragments.Category.CategoryFragment"
-        android:label="fragment_category"
+        android:label="Категория"
         tools:layout="@layout/fragment_category">
         <action
             android:id="@+id/action_categoryFragment_to_occupationFragment"
@@ -167,7 +168,7 @@
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.insense.ui.Settings.SettingsFragment"
-        android:label="fragment_settings"
+        android:label="Настройки"
         tools:layout="@layout/fragment_settings" >
         <action
             android:id="@+id/action_settingsFragment_to_profileFragment"
