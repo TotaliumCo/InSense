@@ -1,18 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.fragments.Categories.CategoriesFragment"
+    android:background="#0F0635">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".ui.fragments.Categories.CategoriesFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            >
 
-    </FrameLayout>
+            <TextView
+                android:id="@+id/textView_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="124dp"
+                android:layout_marginTop="260dp"
+                android:text="It is categories"
+                android:textColor="#29E1CD"
+                android:textSize="35sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/button_categories_main"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#29E1CD"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_home"
+                android:textColor="#0B1637"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+
+            <ImageButton
+                android:id="@+id/button_categories_profile"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#29E1CD"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_profile"
+                android:textColor="#0B1637"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_categories_main" />
+
+            <ImageButton
+                android:id="@+id/button_categories_calendar"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#29E1CD"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_calendar"
+                android:textColor="#0B1637"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_categories_categories" />
+
+            <ImageButton
+                android:id="@+id/button_categories_categories"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="#29E1CD"
+                android:scaleType="centerCrop"
+                android:src="@drawable/button_action"
+                android:textColor="#0B1637"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </layout>
