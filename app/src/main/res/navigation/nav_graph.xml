@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/settingsFragment">
+    app:startDestination="@id/settingsFragment"
+    app:labelVisibilityMode="unlabeled">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -167,7 +168,7 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.insense.ui.Settings.SettingsFragment"
+        android:name="com.example.insense.ui.fragments.Settings.SettingsFragment"
         android:label="Настройки"
         tools:layout="@layout/fragment_settings" >
         <action

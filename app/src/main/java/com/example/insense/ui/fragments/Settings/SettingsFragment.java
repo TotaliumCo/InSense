@@ -1,4 +1,4 @@
-package com.example.insense.ui.Settings;
+package com.example.insense.ui.fragments.Settings;
 
 import android.os.Bundle;
 
