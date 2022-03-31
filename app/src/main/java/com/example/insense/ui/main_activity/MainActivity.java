@@ -1,5 +1,6 @@
 package com.example.insense.ui.main_activity;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -12,22 +13,25 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.insense.R;
+import com.example.insense.repository.ActivityRepository;
+import com.example.insense.repository.room.Activity;
 import com.example.insense.ui.fragments.Login.LoginViewModel;
 
 public class MainActivity extends AppCompatActivity {
     LoginViewModel viewModel = new LoginViewModel();
     private NavController navController;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 

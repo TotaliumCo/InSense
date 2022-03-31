@@ -1,4 +1,4 @@
-package com.example.insense.ui.fragments.Main;
+package com.example.insense.ui.fragments.Main.Clocks;
 
 import androidx.lifecycle.ViewModel;
 
