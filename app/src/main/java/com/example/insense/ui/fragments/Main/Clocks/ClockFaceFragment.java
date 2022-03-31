@@ -1,4 +1,4 @@
-package com.example.insense.ui.fragments.Main;
+package com.example.insense.ui.fragments.Main.Clocks;
 
 import android.os.Bundle;
 
@@ -25,5 +25,11 @@ public class ClockFaceFragment extends Fragment {
                              @Nullable Bundle savedInstanceState) {
         super.onCreateView(inflater,container,savedInstanceState);
         return new DrawView(getActivity());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
     }
 }

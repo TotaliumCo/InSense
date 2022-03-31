@@ -8,13 +8,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.insense.R;
 import com.example.insense.databinding.FragmentMainBinding;
+import com.example.insense.ui.fragments.Main.Clocks.ClockFaceFragment;
 
 
 public class MainFragment extends Fragment {
