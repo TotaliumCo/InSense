@@ -56,7 +56,7 @@ public class MainFragment extends Fragment {
         fragmentMainBinding.buttonMainCategories.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(MainFragment.this).navigate(R.id.action_mainFragment_to_categoriesFragment);
+                NavHostFragment.findNavController(MainFragment.this).navigate(R.id.action_mainFragment_to_categoriesFragment );
             }
         });
         return fragmentMainBinding.getRoot();
