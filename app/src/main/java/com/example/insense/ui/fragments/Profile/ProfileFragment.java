@@ -18,15 +18,16 @@ import com.example.insense.databinding.FragmentProfileBinding;
 import com.example.insense.ui.fragments.Login.LoginViewModel;
 import com.firebase.ui.auth.AuthUI;
 
+import java.util.Arrays;
+import java.util.List;
+
 
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding fragmentProfileBinding;
-
+    LoginViewModel viewModel = new LoginViewModel();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
     }
 
 
@@ -37,6 +38,13 @@ public class ProfileFragment extends Fragment {
         fragmentProfileBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_profile,container,false);
 
         fragmentProfileBinding = FragmentProfileBinding.inflate(inflater, container, false);
+        fragmentProfileBinding.buttonToSettings2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AuthUI.getInstance().signOut(getContext());
+                NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_starterFragment);
+            }
+        });
         fragmentProfileBinding.buttonToSettings.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
