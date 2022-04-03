@@ -31,16 +31,15 @@ public class ActivityRepository {
 
         Log.i("ACTIVEREPOSITORYCRATION", String.valueOf(context));
         List<Activity> activities = new ArrayList<Activity>(){};
-
-//        Activity earlyMorning = new Activity();
-//        earlyMorning.name = "Early walking with the dog";
-//        earlyMorning.description = "lol";
-//        earlyMorning.color =
-//                new ColorCanvas(255,200,140 ,89);
-//        earlyMorning.endDate =
-//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0);
-//        earlyMorning.startDate =
-//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
+        Activity earlyMorning = new Activity();
+        earlyMorning.name = "Early walking with the dog";
+        earlyMorning.description = "lol";
+        earlyMorning.color =
+                new ColorCanvas(255,200,140 ,89);
+        earlyMorning.endDate =
+                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0);
+        earlyMorning.startDate =
+                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
 //
 //
 //        Activity breakfast = new Activity();
@@ -54,7 +53,7 @@ public class ActivityRepository {
 //                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,10,0,0);
 //
 //        if(earlyMorning.)
-//        activities.add(earlyMorning);
+       activities.add(earlyMorning);
 //        activities.add(breakfast);
 
         db = Room.databaseBuilder(context, AppDB.class, "database-name").fallbackToDestructiveMigration().allowMainThreadQueries().build();
