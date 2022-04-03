@@ -103,6 +103,9 @@
         android:name="com.example.insense.ui.fragments.Category.CategoryFragment"
         android:label="Категория"
         tools:layout="@layout/fragment_category">
+        <argument
+            android:name="MyArg"
+            android:defaultValue="default" />
         <action
             android:id="@+id/action_categoryFragment_to_occupationFragment"
             app:destination="@id/occupationFragment" />
