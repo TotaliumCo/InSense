@@ -4,6 +4,7 @@ import java.util.List;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Transaction;
 import androidx.room.Update;
 import androidx.room.Dao;
 
@@ -38,4 +39,9 @@ public interface ActivityDAO {
 
     @Delete
     void delete(Activity activitys);
+
+
+    /*@Transaction
+    @Query("SELECT * FROM Activity")
+    public List<ActivityCategory> all_activity_category();*/
 }
