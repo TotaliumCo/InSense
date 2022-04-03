@@ -13,13 +13,19 @@ public class App extends Application {
 
     private AppDB database;
 
+    private ActivityRepository activityRepository;
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onCreate() {
         super.onCreate();
         instance = this;
-        ActivityRepository activityRepository = new ActivityRepository(getApplicationContext());
+        activityRepository = new ActivityRepository(getApplicationContext());
         database = activityRepository.getDatabase();
+    }
+
+    public ActivityRepository getActivityRepository() {
+        return activityRepository;
     }
 
     public static App getInstance() {

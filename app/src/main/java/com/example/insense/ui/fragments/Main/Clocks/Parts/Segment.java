@@ -21,14 +21,14 @@ public class Segment{
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Segment(Activity activity
     ){
-        Log.i("ACTINSEGM", String.valueOf(activity));
-        start = activity.startHour*60*60 +activity.startMinute*60+activity.startSec;
-        finish =  activity.endHour*60*60 +activity.endMinute*60+activity.endSec;
+        start = activity.startDate.getHour() * 60 * 60 + activity.startDate.getMinute() * 60
+                + activity.startDate.getSec();
+        finish = activity.endDate.getHour() * 60 * 60 + activity.endDate.getMinute() * 60
+                + activity.endDate.getSec();
         paint = new Paint();
-        Log.i("ACTINSEGM", String.valueOf(finish)+String.valueOf(start));
-        paint.setARGB(activity.al,activity.red,activity.green,activity.blue);
-        Log.i("ACTINSEGM", String.valueOf(activity.al)+String.valueOf(activity.blue)+String.valueOf(activity.green)+String.valueOf(activity.red));
+        paint.setARGB(activity.color.getAl(), activity.color.getRed(), activity.color.getGreen(), activity.color.getBlue());
         paint.setStrokeCap(Paint.Cap.ROUND);
+
     }
 
     public void print(Canvas canvas){

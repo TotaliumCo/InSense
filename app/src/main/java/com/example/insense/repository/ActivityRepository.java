@@ -8,13 +8,19 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 import androidx.room.Room;
 
+import com.example.insense.models.ColorCanvas;
+import com.example.insense.models.Date;
 import com.example.insense.repository.room.Activity;
 import com.example.insense.repository.room.ActivityDAO;
 import com.example.insense.repository.room.AppDB;
+import com.example.insense.ui.fragments.Main.Clocks.Parts.Segment;
 
-import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 public class ActivityRepository {
     AppDB db;
@@ -23,58 +29,62 @@ public class ActivityRepository {
     @RequiresApi(api = Build.VERSION_CODES.O)
     public ActivityRepository(Context context){
 
+        Log.i("ACTIVEREPOSITORYCRATION", String.valueOf(context));
         List<Activity> activities = new ArrayList<Activity>(){};
 
-        Activity earlyMorning = new Activity();
-
-        earlyMorning.name = "Early walking with the dog";
-        earlyMorning.description = "lol";
-        earlyMorning.red = 140;
-        earlyMorning.blue = 80;
-        earlyMorning.green = 50;
-        earlyMorning.al = 255;
-        earlyMorning.startYear = 2022;
-        earlyMorning.startDay = 200;
-        earlyMorning.startHour = 0;
-        earlyMorning.startMinute = 43;
-        earlyMorning.startSec = 23;
-        earlyMorning.endYear = 2022;
-        earlyMorning.endDay = 200;
-        earlyMorning.endHour = 6;
-        earlyMorning.endMinute = 43;
-        earlyMorning.endSec = 23;
-
-
-
-
-        Activity breakfast = new Activity();
-
-        breakfast.name = "Breakfast";
-        breakfast.description = "lol";
-        breakfast.red = 50;
-        breakfast.blue = 180;
-        breakfast.green = 140;
-        breakfast.al = 254;
-        breakfast.startYear = 2022;
-        breakfast.startDay = 200;
-        breakfast.startHour = 7;
-        breakfast.startMinute = 43;
-        breakfast.startSec = 23;
-        breakfast.endYear = 2022;
-        breakfast.endDay = 200;
-        breakfast.endHour = 23;
-        breakfast.endMinute = 43;
-        breakfast.endSec = 23;
-
-        activities.add(earlyMorning);
-        activities.add(breakfast);
-
+//        Activity earlyMorning = new Activity();
+//        earlyMorning.name = "Early walking with the dog";
+//        earlyMorning.description = "lol";
+//        earlyMorning.color =
+//                new ColorCanvas(255,200,140 ,89);
+//        earlyMorning.endDate =
+//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0);
+//        earlyMorning.startDate =
+//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
+//
+//
+//        Activity breakfast = new Activity();
+//        breakfast.name = "Breakfast";
+//        breakfast.description = "lol";
+//        breakfast.color =
+//                new ColorCanvas(254,50,140,180);
+//        breakfast.endDate =
+//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
+//        breakfast.startDate =
+//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,10,0,0);
+//
+//        if(earlyMorning.)
+//        activities.add(earlyMorning);
+//        activities.add(breakfast);
 
         db = Room.databaseBuilder(context, AppDB.class, "database-name").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         activityDao = db.userDao();
         activityDao.insertAll(activities);
-           }
+
+    }
     public AppDB getDatabase(){
         return db;
+    }
+    public List<Activity> ActivitiesFromTo(Date startDate,Date endDate){
+
+
+          ArrayList<Activity> allActivities;
+          List<Activity> allGotActivities;
+          ArrayList<Long> Activities = new ArrayList<>();
+          allActivities = (ArrayList<Activity>) db.userDao().getAll();
+          for (Activity activity:allActivities) {
+              if((activity.startDate.getSecs() >= startDate.getSecs()) && (activity.endDate.getSecs() <= endDate.getSecs())){
+                  Activities.add(activity.uid);
+              }
+          }
+          allGotActivities = (List<Activity>) db.userDao().loadAllByIds(Activities);
+          Collections.sort(allGotActivities, new MyComparator ());
+          return  allGotActivities;
+    }
+    class MyComparator implements Comparator<Activity> {
+        @Override
+        public int compare(Activity activity, Activity t1) {
+            return Long.compare(activity.startDate.getSecs(),t1.startDate.getSecs());
+        }
     }
 }

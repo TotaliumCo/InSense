@@ -9,23 +9,28 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 
 import com.example.insense.application.App;
+import com.example.insense.models.Date;
+import com.example.insense.repository.ActivityRepository;
 import com.example.insense.repository.room.Activity;
 import com.example.insense.repository.room.AppDB;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Calendar;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class Clocks24H {
 
-    AppDB dataBase = App.getInstance().getDatabase();
     Canvas canvas;
+    ActivityRepository repository = App.instance.getActivityRepository();
     Paint digital_time_paint = new Paint();
     Paint time_arc_paint = new Paint();
     Paint circle_paint = new Paint();
     final RectF oval = new RectF();
-    Segment segment0 = new Segment(dataBase.userDao().loadByName("Early walking with the dog"));
-    Segment segment1 = new Segment(dataBase.userDao().loadByName("Breakfast"));
+    ArrayList<Segment> segments = new ArrayList<>();
+
+    java.util.Date realTime = new java.util.Date(System.currentTimeMillis());
 
     public Clocks24H(){
         digital_time_paint.setARGB(255,7, 229, 245);
@@ -36,6 +41,13 @@ public class Clocks24H {
 
         circle_paint.setARGB(255,7, 229, 245);
         circle_paint.setAntiAlias(true);
+        for (Activity act: repository.ActivitiesFromTo(new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0),
+                new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR+1,0,0,0)))
+        {
+            Log.i("ACT", String.valueOf(act.startDate.getSecs()));
+            segments.add(new Segment(act));
+        }
+        Log.i("SEG", "Clocks24H: "+segments.toString());
     }
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void print(Canvas canvas){
@@ -57,8 +69,11 @@ public class Clocks24H {
         canvas.drawARGB(200,20, 0, 55);
         // установка основного цвета
         circle_paint.setARGB( 255,41, 225, 205);
-        segment0.print(canvas);
-        segment1.print(canvas);
+        for (Segment seg: segments )
+        {
+            seg.print(canvas);
+        }
+
         // отрисовка дуги прошедшего суточного времени
         canvas.drawArc(oval,start_angle,sweep_angle,false,time_arc_paint);
         // отрисовка цифровых часов
