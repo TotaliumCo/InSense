@@ -43,7 +43,7 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView tv = view.findViewById(R.id.button3);
+        TextView tv = view.findViewById(R.id.textView_category);
         String text = getArguments().getString("arg1");
 
         switch (text){
