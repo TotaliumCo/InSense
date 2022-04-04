@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,8 +37,16 @@ public class CategoryFragment extends Fragment {
 
 
 
+        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(CategoryFragment.this).navigate(R.id.action_categoryFragment_to_categoriesFragment);
+            }
+        });
 
-        return inflater.inflate(R.layout.fragment_category, container, false);
+
+
+        return fragmentCategoryBinding.getRoot();
     }
 
     @Override
