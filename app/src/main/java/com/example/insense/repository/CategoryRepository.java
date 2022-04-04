@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class CategoryRepository {
 
-
     CategoryDB db;
     CategoryDAO categoryDAO;
 
@@ -49,15 +48,11 @@ public class CategoryRepository {
         categories.add(sport);
         categories.add(music);
 
-
-
-        /*db = Room.databaseBuilder(context, AppDB.class, "database-name").fallbackToDestructiveMigration().allowMainThreadQueries().build();
-        activityDao = db.userDao();
-        activityDao.insertAll(activities);*/
         CategoryDB db =  Room.databaseBuilder(context.getApplicationContext(),
                 CategoryDB.class, "database").build();
         categoryDAO = db.user_categ();
         categoryDAO.insertAll(categories);
+
     }
     public CategoryDB getDatabase(){
         return db;
