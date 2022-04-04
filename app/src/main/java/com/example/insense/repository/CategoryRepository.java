@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class CategoryRepository {
 
 
-    CategoryDAO db;
+    CategoryDB db;
     CategoryDAO categoryDAO;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -59,7 +59,7 @@ public class CategoryRepository {
         categoryDAO = db.user_categ();
         categoryDAO.insertAll(categories);
     }
-    public CategoryDAO getDatabase(){
+    public CategoryDB getDatabase(){
         return db;
     }
 
