@@ -1,4 +1,4 @@
-package com.example.insense.repository.room;
+package com.example.insense.repository.room.categoryDB;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
@@ -17,8 +17,8 @@ public class Category {
     public String name_categ;
     @ColumnInfo(name = "description_categ")
     public String description_categ;
-    @TypeConverters({CategoriesConventer.class})
-    public List<String> category;
+    @ColumnInfo(name = "occupations")
+    public List<String> occupations;
 
 
 

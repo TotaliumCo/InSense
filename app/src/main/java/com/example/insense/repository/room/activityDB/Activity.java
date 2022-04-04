@@ -1,4 +1,4 @@
-package com.example.insense.repository.room;
+package com.example.insense.repository.room.activityDB;
 
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;

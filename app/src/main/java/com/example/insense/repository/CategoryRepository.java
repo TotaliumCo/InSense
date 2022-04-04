@@ -6,15 +6,11 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 import androidx.room.Room;
 
-import com.example.insense.repository.room.Activity;
-import com.example.insense.repository.room.ActivityDAO;
-import com.example.insense.repository.room.AppDB;
-import com.example.insense.repository.room.Category;
-import com.example.insense.repository.room.CategoryDAO;
-import com.example.insense.repository.room.CategoryDB;
+import com.example.insense.repository.room.categoryDB.Category;
+import com.example.insense.repository.room.categoryDB.CategoryDAO;
+import com.example.insense.repository.room.categoryDB.CategoryDB;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CategoryRepository {
 
@@ -36,7 +32,7 @@ public class CategoryRepository {
         all_sports.add("РАСТЯЖКА");
         sport.name_categ = "спорт";
         sport.description_categ = "физическая нагрузка";
-        sport.category = all_sports;
+        sport.occupations = all_sports;
 
         Category music = new Category();
         ArrayList<String> all_music = new ArrayList<>();
@@ -48,7 +44,7 @@ public class CategoryRepository {
         all_music.add("РАСТЯЖКА");
         music.name_categ = "ПИСАТЬ МУЗЫКУ";
         music.description_categ = "занятия музыкой";
-        music.category = all_music;
+        music.occupations = all_music;
 
         categories.add(sport);
         categories.add(music);

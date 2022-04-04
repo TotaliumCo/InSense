@@ -1,4 +1,4 @@
-package com.example.insense.repository.room;
+package com.example.insense.repository.room.activityDB;
 
 import android.util.Log;
 
@@ -10,7 +10,7 @@ import com.example.insense.models.Date;
 
 import java.util.Formatter;
 
-public class Converters {
+public class ActivityConverters {
    @TypeConverter
     public static Date fromTimestamp(Long value) {
        Log.i("TIMESTAMP", String.valueOf(value/(60*60)));

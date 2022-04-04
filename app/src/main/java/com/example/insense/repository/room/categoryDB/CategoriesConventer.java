@@ -1,4 +1,4 @@
-package com.example.insense.repository.room;
+package com.example.insense.repository.room.categoryDB;
 
 import android.os.Build;
 

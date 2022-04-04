@@ -11,8 +11,7 @@ import androidx.annotation.RequiresApi;
 import com.example.insense.application.App;
 import com.example.insense.models.Date;
 import com.example.insense.repository.ActivityRepository;
-import com.example.insense.repository.room.Activity;
-import com.example.insense.repository.room.AppDB;
+import com.example.insense.repository.room.activityDB.Activity;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

@@ -6,12 +6,12 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import com.example.insense.repository.ActivityRepository;
-import com.example.insense.repository.room.AppDB;
+import com.example.insense.repository.room.activityDB.ActivityDB;
 
 public class App extends Application {
     public static App instance;
 
-    private AppDB database;
+    private ActivityDB database;
 
     private ActivityRepository activityRepository;
 
@@ -32,7 +32,7 @@ public class App extends Application {
         return instance;
     }
 
-    public AppDB getDatabase() {
+    public ActivityDB getDatabase() {
         return database;
     }
 }

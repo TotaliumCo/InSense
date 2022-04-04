@@ -4,11 +4,10 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
-import com.example.insense.repository.room.Activity;
+import com.example.insense.repository.room.activityDB.Activity;
 
 public class Segment{
 
