@@ -1,4 +1,4 @@
-package com.example.insense.repository.room;
+package com.example.insense.repository.room.categoryDB;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -8,8 +8,6 @@ import androidx.room.TypeConverters;
 import androidx.room.Update;
 
 
-import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 @Dao
 public interface CategoryDAO {

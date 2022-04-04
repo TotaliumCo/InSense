@@ -1,7 +1,6 @@
 package com.example.insense.repository;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.util.Log;
 
@@ -10,20 +9,18 @@ import androidx.room.Room;
 
 import com.example.insense.models.ColorCanvas;
 import com.example.insense.models.Date;
-import com.example.insense.repository.room.Activity;
-import com.example.insense.repository.room.ActivityDAO;
-import com.example.insense.repository.room.AppDB;
-import com.example.insense.ui.fragments.Main.Clocks.Parts.Segment;
+import com.example.insense.repository.room.activityDB.Activity;
+import com.example.insense.repository.room.activityDB.ActivityDAO;
+import com.example.insense.repository.room.activityDB.ActivityDB;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class ActivityRepository {
-    AppDB db;
+    ActivityDB db;
     ActivityDAO activityDao;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -56,12 +53,12 @@ public class ActivityRepository {
        activities.add(earlyMorning);
 //        activities.add(breakfast);
 
-        db = Room.databaseBuilder(context, AppDB.class, "database-name").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+        db = Room.databaseBuilder(context, ActivityDB.class, "database-name").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         activityDao = db.userDao();
         activityDao.insertAll(activities);
 
     }
-    public AppDB getDatabase(){
+    public ActivityDB getDatabase(){
         return db;
     }
     public List<Activity> ActivitiesFromTo(Date startDate,Date endDate){

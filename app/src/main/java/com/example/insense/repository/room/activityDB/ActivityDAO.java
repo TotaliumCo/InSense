@@ -1,6 +1,5 @@
-package com.example.insense.repository.room;
+package com.example.insense.repository.room.activityDB;
 
-import java.util.ArrayList;
 import java.util.List;
 import androidx.room.Delete;
 import androidx.room.Insert;

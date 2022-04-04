@@ -2,26 +2,16 @@ package com.example.insense.ui.main_activity;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
 import androidx.navigation.Navigation;
 
-import androidx.lifecycle.Observer;
-import androidx.navigation.fragment.NavHostFragment;
-import androidx.navigation.ui.NavigationUI;
-
-import android.app.ActionBar;
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
 import com.example.insense.R;
-import com.example.insense.repository.ActivityRepository;
-import com.example.insense.repository.room.Activity;
 import com.example.insense.ui.fragments.Login.LoginViewModel;
 
 public class MainActivity extends AppCompatActivity {
