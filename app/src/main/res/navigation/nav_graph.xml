@@ -112,6 +112,9 @@
         <action
             android:id="@+id/action_categoryFragment_to_importFragment"
             app:destination="@id/importFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
     </fragment>
     <fragment
         android:id="@+id/occupationFragment"
