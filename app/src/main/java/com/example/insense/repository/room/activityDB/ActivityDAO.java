@@ -14,7 +14,7 @@ public interface ActivityDAO {
     List<Activity> getAll();
 
     @Query("SELECT * FROM Activity WHERE uid IN (:activity_lolIds)")
-    List<Activity> loadAllByIds(int[] activity_lolIds);
+    List<Activity> loadAllByIds(List<Long> activity_lolIds);
 
     @Query("SELECT * FROM Activity WHERE uid IN (:id)")
     Activity loadById(int id);
@@ -25,8 +25,6 @@ public interface ActivityDAO {
     @Query("SELECT * FROM Activity WHERE name IN (:name)")
     Activity loadByName(String name);
 
-    @Query("SELECT * FROM Activity WHERE al IN (:al)")
-    Activity loadByAl(int al);
 
     @Query("SELECT * FROM Activity WHERE name IN (:name)")
     Activity loadByDay(String name);
