@@ -1,5 +1,6 @@
 package com.example.insense.repository.room.categoryDB;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -20,6 +21,10 @@ public interface CategoryDAO {
 
     @Query("SELECT * FROM category WHERE name_categ = :name_categ")
     Category get_all_categories(@TypeConverters({CategoriesConventer.class}) List<String> name_categ);
+
+    @Query("SELECT * FROM category WHERE name_categ = :name_categ")
+    List<Category> get_all_in_category(String name_categ);
+
 
 
     @Insert

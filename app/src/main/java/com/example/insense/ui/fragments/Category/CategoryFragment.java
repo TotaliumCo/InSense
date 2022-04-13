@@ -14,12 +14,27 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.insense.R;
+import com.example.insense.application.App;
 import com.example.insense.databinding.FragmentCategoriesBinding;
 import com.example.insense.databinding.FragmentCategoryBinding;
+import com.example.insense.repository.ActivityRepository;
+import com.example.insense.repository.CategoryRepository;
+import com.example.insense.repository.room.categoryDB.Category;
+import com.example.insense.repository.room.categoryDB.CategoryDAO;
+import com.example.insense.repository.room.categoryDB.CategoryDB;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class CategoryFragment extends Fragment {
     private FragmentCategoryBinding fragmentCategoryBinding;
+    CategoryDB db = App.getInstance().getDatabase_category();
+    /*CategoryDAO categoryDAO = db.user_categ();*/
+    CategoryRepository repository = App.instance.getCategoryRepository();
+
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,9 +70,21 @@ public class CategoryFragment extends Fragment {
         TextView tv = view.findViewById(R.id.textView_category);
         String text = getArguments().getString("arg1");
 
+
         switch (text){
             case "sport":
-                tv.setText(text);
+                tv.setText("СПОРТ");
+                /*List<Category> categories = categoryDAO.("sport");*/
+                List<String> all = repository.all_categories_return("sports");
+                fragmentCategoryBinding.button1.setText(all.get(0));
+                fragmentCategoryBinding.button2.setText(all.get(2));
+                fragmentCategoryBinding.button3.setText(all.get(3));
+                fragmentCategoryBinding.button4.setText(all.get(4));
+                fragmentCategoryBinding.button5.setText(all.get(5));
+
+
+                /*tv.setText(all.get(2));*/
+                break;
             case "music":
                 tv.setText(text);
             case "study":
