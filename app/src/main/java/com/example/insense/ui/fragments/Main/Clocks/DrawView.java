@@ -5,6 +5,7 @@ package com.example.insense.ui.fragments.Main.Clocks;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -34,6 +35,16 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if(App.getInstance().getGlobalTimer().getIsTimer()){
+            if (App.getInstance().getGlobalTimer().getIsTimerRunning()){
+                App.getInstance().getGlobalTimer().stopTimer();
+                Log.i("TIMER", "STOPPED");
+            }else{
+                App.getInstance().getGlobalTimer().startTimer();
+                Log.i("TIMER", "Started");
+            }
+        }
+
         return super.onTouchEvent(event);
     }
 

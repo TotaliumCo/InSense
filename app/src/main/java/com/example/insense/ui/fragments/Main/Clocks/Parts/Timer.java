@@ -53,7 +53,7 @@ public class Timer {
         canvas.drawArc(oval,start_angle,sweep_angle,false,time_arc_paint);
         // отрисовка цифровых часов
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("mm:ss");
-        canvas.drawText(String.valueOf(seconds/1000/60)+":"+String.valueOf(seconds%60), width/2-130,height/2+40,digital_time_paint);
+        canvas.drawText(String.valueOf(seconds/1000/60)+":"+String.valueOf(seconds/1000%60), width/2-50,height/2+25,digital_time_paint);
 
     }
 }

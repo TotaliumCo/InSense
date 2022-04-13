@@ -36,7 +36,7 @@ public class ActivityRepository {
         earlyMorning.endDate =
                 new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0);
         earlyMorning.startDate =
-                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
+                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,1,0);
 
        activities.add(earlyMorning);
         db = Room.databaseBuilder(context, ActivityDB.class, "database").fallbackToDestructiveMigration().allowMainThreadQueries().build();

@@ -32,7 +32,6 @@ public class App extends Application {
         activityRepository = new ActivityRepository(getApplicationContext());
         occupationRepository = new OccupationRepository(getApplicationContext());
         categoryRepository = new CategoryRepository(getApplicationContext());
-
         globalTimer.setTimerByActivity(activityRepository.getDatabase().userDao().loadById(1));
 
     }
