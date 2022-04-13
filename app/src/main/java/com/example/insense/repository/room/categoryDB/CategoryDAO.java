@@ -14,22 +14,15 @@ public interface CategoryDAO {
 
     @Query("SELECT * FROM Category")
     List<Category> getAll();
-    @Query("SELECT * FROM Category WHERE uid_categ IN (:id)")
+    @Query("SELECT * FROM Category WHERE uid IN (:id)")
     Category loadById(int id);
-
-
-    @Query("SELECT * FROM category WHERE name_categ = :name_categ")
-    Category get_all_categories(@TypeConverters({CategoriesConventer.class}) List<String> name_categ);
-
+    @Query("SELECT * FROM category WHERE name = :name")
+    Category get_all_categories( List<String> name);
 
     @Insert
     void insertAll(List<Category> categories);
     @Update
     void updateActivity(Category category);
-
     @Delete
     void delete(Category category);
-
-
-
 }

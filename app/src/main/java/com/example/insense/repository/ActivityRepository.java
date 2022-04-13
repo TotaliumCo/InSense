@@ -37,30 +37,18 @@ public class ActivityRepository {
                 new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0);
         earlyMorning.startDate =
                 new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
-//
-//
-//        Activity breakfast = new Activity();
-//        breakfast.name = "Breakfast";
-//        breakfast.description = "lol";
-//        breakfast.color =
-//                new ColorCanvas(254,50,140,180);
-//        breakfast.endDate =
-//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,2,0,0);
-//        breakfast.startDate =
-//                new com.example.insense.models.Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,10,0,0);
-//
-//        if(earlyMorning.)
-       activities.add(earlyMorning);
-//        activities.add(breakfast);
 
-        db = Room.databaseBuilder(context, ActivityDB.class, "database-name").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+       activities.add(earlyMorning);
+        db = Room.databaseBuilder(context, ActivityDB.class, "database").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         activityDao = db.userDao();
         activityDao.insertAll(activities);
 
     }
+
     public ActivityDB getDatabase(){
         return db;
     }
+
     public List<Activity> ActivitiesFromTo(Date startDate,Date endDate){
 
 
