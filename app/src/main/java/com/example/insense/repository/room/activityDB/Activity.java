@@ -26,6 +26,7 @@ public class Activity {
     public Date endDate;
     @ColumnInfo(name = "color")
     public ColorCanvas color;
-
+    @ColumnInfo(name = "status")
+    public String status = "not completed";
 
 }

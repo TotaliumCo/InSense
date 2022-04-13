@@ -1,20 +1,20 @@
-package com.example.insense.repository.room.categoryDB;
+package com.example.insense.repository.room.occupationDB;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
-import androidx.room.Query;
-import androidx.room.TypeConverters;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.example.insense.models.ColorCanvas;
+import com.example.insense.models.Date;
 
 @Entity
-public class Category {
+public class Occupation {
     @PrimaryKey(autoGenerate = true)
     public long uid;
     @ColumnInfo(name = "name")
     public String name;
+    @ColumnInfo(name = "category")
+    public String category;
     @ColumnInfo(name = "description")
     public String description;
 }

@@ -29,9 +29,9 @@ public class CategoryRepository {
         all_sports.add("РАЗМИНКА");
         all_sports.add("ЗАРЯДКА");
         all_sports.add("РАСТЯЖКА");
-        sport.name_categ = "спорт";
-        sport.description_categ = "физическая нагрузка";
-        sport.occupations = all_sports;
+        sport.name = "спорт";
+        sport.description = "физическая нагрузка";
+//        sport.occupations = all_sports;
 
         Category music = new Category();
         ArrayList<String> all_music = new ArrayList<>();
@@ -41,21 +41,20 @@ public class CategoryRepository {
         all_music.add("УЧИТЬ НОТЫ");
         all_music.add("ИГРА НА СКРИПКЕ");
         all_music.add("РАСТЯЖКА");
-        music.name_categ = "ПИСАТЬ МУЗЫКУ";
-        music.description_categ = "занятия музыкой";
-        music.occupations = all_music;
+        music.name = "ПИСАТЬ МУЗЫКУ";
+        music.description = "занятия музыкой";
+  //      music.occupations = all_music;
 
         categories.add(sport);
         categories.add(music);
 
-        CategoryDB db =  Room.databaseBuilder(context.getApplicationContext(),
-                CategoryDB.class, "database").build();
-        categoryDAO = db.user_categ();
+        CategoryDB db =  Room.databaseBuilder(context,
+                CategoryDB.class, "database").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+        categoryDAO = db.categoryDAO();
         categoryDAO.insertAll(categories);
 
     }
     public CategoryDB getDatabase(){
         return db;
     }
-
 }
