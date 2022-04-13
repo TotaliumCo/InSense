@@ -3,6 +3,7 @@ package com.example.insense.services.time;
 import android.os.CountDownTimer;
 import android.util.Log;
 
+import com.example.insense.application.App;
 import com.example.insense.repository.room.activityDB.Activity;
 
 public class GlobalTimer {
@@ -16,25 +17,34 @@ public class GlobalTimer {
     public GlobalTimer() {}
 
     public void startTimer() {
-        mCountDownTimer = new CountDownTimer(mLeftTimeInMillis, 10) {
+        mCountDownTimer = new CountDownTimer(mLeftTimeInMillis, 1) {
 
             @Override
-            public void onTick(long millisUntilFinished) {
+            public void onTick(long millisUntilFinished){
                 mLeftTimeInMillis = (int) millisUntilFinished;
             }
 
             @Override
             public void onFinish() {
                 mIsTimerRunning = false;
+                mActivity.status = "completed";
+                App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(mActivity);
+                isTimer = false;
             }
+
         }.start();
 
+        mActivity.status = "running";
+        App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(mActivity);
         mIsTimerRunning = true;
     }
 
     public void stopTimer() {
         mIsTimerRunning = false;
+        mActivity.status = "stopped";
+        App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(mActivity);
         mCountDownTimer.cancel();
+
     }
 
     public void setTimerByActivity(Activity activity) {
