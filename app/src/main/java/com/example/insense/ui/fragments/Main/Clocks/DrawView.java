@@ -11,8 +11,11 @@ import android.view.SurfaceView;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
+import com.example.insense.application.App;
+import com.example.insense.services.time.GlobalTimer;
 import com.example.insense.ui.fragments.Main.Clocks.Parts.Clocks24H;
 import com.example.insense.ui.fragments.Main.Clocks.Parts.Segment;
+import com.example.insense.ui.fragments.Main.Clocks.Parts.Timer;
 
 public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
     private DrawThread drawThread;
@@ -72,9 +75,13 @@ class DrawThread extends Thread {
         Clocks24H clock24 = new Clocks24H();
         while (running) {
             Canvas canvas = surfaceHolder.lockCanvas();
+            Timer timer = new Timer();
             if (canvas != null) {
                 try {
-                    clock24.print(canvas);
+                    if(App.getInstance().getGlobalTimer().getIsTimer()){
+                        timer.print(canvas);
+                    }else{
+                    clock24.print(canvas);}
                 } finally {
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }
