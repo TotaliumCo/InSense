@@ -55,6 +55,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ScrollView
+            android:id="@+id/scroll_view"
             android:layout_width="360dp"
             android:layout_height="530dp"
             android:layout_marginStart="25dp"
@@ -64,64 +65,14 @@
             app:layout_constraintBottom_toTopOf="@+id/button_add"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_back_category">
+            app:layout_constraintTop_toBottomOf="@+id/button_back_category"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <LinearLayout
+                android:id="@+id/linear_layout_occupations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/button_1"
-                    android:textSize="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#0F0635"
-                    android:text="Button"
-                    android:textColor="#29E1CD" />
-
-                <Button
-                    android:id="@+id/button_2"
-                    android:textSize="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#0F0635"
-                    android:text="Button"
-                    android:textColor="#29E1CD" />
-
-                <Button
-                    android:id="@+id/button_3"
-                    android:textSize="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#0F0635"
-                    android:text="Button"
-                    android:textColor="#29E1CD" />
-
-                <Button
-                    android:id="@+id/button_4"
-                    android:textSize="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#0F0635"
-                    android:text="Button"
-                    android:textColor="#29E1CD" />
-
-                <Button
-                    android:id="@+id/button_5"
-                    android:textSize="20dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginBottom="10dp"
-                    android:backgroundTint="#0F0635"
-                    android:text="Button"
-                    android:textColor="#29E1CD" />
-
-            </LinearLayout>
+                android:orientation="vertical" />
         </ScrollView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

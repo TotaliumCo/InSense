@@ -59,35 +59,35 @@ public class CategoriesFragment extends Fragment {
         fragmentCategoriesBinding.buttonSport.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("arg1", "sport");
+                bundle.putString("arg1", "спорт");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
             }
         });
         fragmentCategoriesBinding.buttonMusic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("arg1", "music");
+                bundle.putString("arg1", "музыка");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
             }
         });
         fragmentCategoriesBinding.buttonStudy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("arg1", "study");
+                bundle.putString("arg1", "учеба");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
             }
         });
         fragmentCategoriesBinding.buttonWork.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("arg1", "work");
+                bundle.putString("arg1", "работа");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
             }
         });
         fragmentCategoriesBinding.buttonHobby.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                bundle.putString("arg1", "hobby");
+                bundle.putString("arg1", "хобби");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
             }
         });
@@ -95,7 +95,7 @@ public class CategoriesFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                bundle.putString("arg1", "family");
+                bundle.putString("arg1", "семья");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment,bundle);
             }
         });
@@ -104,7 +104,7 @@ public class CategoriesFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                bundle.putString("arg1", "other");
+                bundle.putString("arg1", "другое");
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
             }
         });

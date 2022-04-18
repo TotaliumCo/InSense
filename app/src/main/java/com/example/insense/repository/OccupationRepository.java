@@ -11,6 +11,7 @@ import com.example.insense.repository.room.occupationDB.OccupationDAO;
 import com.example.insense.repository.room.occupationDB.OccupationDB;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OccupationRepository {
     OccupationDB db;
@@ -22,32 +23,52 @@ public class OccupationRepository {
         ArrayList<Occupation> occupationList = new ArrayList<Occupation>() {
         };
         Occupation piano = new Occupation();
-        piano.category = "Hobbies";
-        piano.name = "Playing on Piano";
+        piano.category = "хобби";
+        piano.name = "Игра на пианино";
         piano.description = "LOL! WHAT?!";
         occupationList.add(piano);
 
         Occupation guitar = new Occupation();
-        guitar.category = "Hobbies";
-        guitar.name = "Playing on guitar";
+        guitar.category = "хобби";
+        guitar.name = "Игра на гитаре";
         guitar.description = "LOL! WHAT?!";
         occupationList.add(guitar);
 
         Occupation workout = new Occupation();
-        guitar.category = "Health";
-        guitar.name = "workout";
-        guitar.description = "LOL! WHAT?!";
+        workout.category = "спорт";
+        workout.name = "разминка";
+        workout.description = "LOL! WHAT?!";
         occupationList.add(workout);
 
-        Occupation medecine = new Occupation();
-        guitar.category = "Health";
-        guitar.name = "medecine";
-        guitar.description = "LOL! WHAT?!";
-        occupationList.add(medecine);
+        Occupation run = new Occupation();
+        run.category = "спорт";
+        run.name = "пробежка";
+        run.description = "LOL! WHAT?!";
+        occupationList.add(run);
+
+        Occupation tennis = new Occupation();
+        tennis.category = "спорт";
+        tennis.name = "игра в теннис";
+        tennis.description = "LOL! WHAT?!";
+        occupationList.add(tennis);
+
+
+
 
         OccupationDB db = Room.databaseBuilder(context,
                 OccupationDB.class, "database").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         occupationDAO = db.occupationDAO();
         occupationDAO.insertAll(occupationList);
     }
+    public List<String> occupation_by_category(String categ){
+        List<Occupation> all;
+
+        all = occupationDAO.loadOccupationByCategoriesName(categ);
+        List<String> all_categ = new ArrayList<>();
+        for (int i = 0; i < all.size(); i++) {
+            all_categ.add(all.get(i).name);
+        }
+        return all_categ;
+    }
+
 }
