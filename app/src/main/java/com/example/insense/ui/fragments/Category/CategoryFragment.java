@@ -41,10 +41,6 @@ public class CategoryFragment extends Fragment {
     OccupationDAO occupationDAO;
 
 
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +55,6 @@ public class CategoryFragment extends Fragment {
         fragmentCategoryBinding = FragmentCategoryBinding.inflate(inflater, container, false);
 
 
-
-
         fragmentCategoryBinding.buttonBackCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,61 +63,36 @@ public class CategoryFragment extends Fragment {
         });
 
 
-
         return fragmentCategoryBinding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView tv = view.findViewById(R.id.textView_category);
-        /*TextView tv_occupation = view.findViewById(R.id.button_occupation);*/
-        String text = getArguments().getString("arg1");
-        List<String> all_ocuppations = new ArrayList<>();
-        ScrollView scrollView = (ScrollView) view.findViewById(R.id.scrollView);
+        /*TextView tv = view.findViewById(R.id.textView_category);*/
 
-        all_ocuppations = repository.occupation_by_category("спорт");
+
+        String text = getArguments().getString("arg1");
+       /* tv.setText(text);*/
+        List<String> all_ocuppations;
+        List<String> all_descriptions;
+
+
+        all_ocuppations = repository.occupation_by_category(text);
+        all_descriptions = repository.discription_of_occupation(text);
         for (int i = 0; i < all_ocuppations.size(); i++) {
             LinearLayout layout = (LinearLayout) view.findViewById(R.id.linear_layout_occupations);
-            View view1 = getLayoutInflater().inflate(R.layout.one_occupation_sample, null);
-
+            View view1 = getLayoutInflater().inflate(R.layout.one_occupation_sample, null, false);
+            TextView textView = (TextView) view1.findViewById(R.id.button_occupation);
+            TextView textView1 = (TextView) view1.findViewById(R.id.textView_description_of_occupation);
+            textView.setText(all_ocuppations.get(i));
+            textView1.setText(all_descriptions.get(i));
             layout.addView(view1);
-            /*view1.findViewById(R.id.button_occupation).setText()*/
-            TextView tv_occupation = layout.findViewById(R.id.button_occupation);
-            tv_occupation.setText(all_ocuppations.get(i));
 
 
         }
 
-
-
-        switch (text){
-            case "спорт":
-                tv.setText("СПОРТ");
-                /*all_ocuppations = occupationDAO.loadOccupationByCategoriesName("спорт");
-                for (int i = 0; i < all_ocuppations.size(); i++) {
-                    View view1 = getLayoutInflater().inflate(R.layout.one_occupation_sample, null);
-                    layout.addView(view1);
-                }*/
-
-
-
-
-
-                /*tv.setText(all.get(2));*/
-                break;
-            case "музыка":
-                tv.setText(text);
-            case "учеба":
-                tv.setText(text);
-            case "работа":
-                tv.setText(text);
-            case "хобби":
-                tv.setText(text);
-            case "семья":
-                tv.setText(text);
-            case "другое":
-                tv.setText(text);
-        }
     }
 }
+
+

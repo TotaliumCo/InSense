@@ -25,25 +25,25 @@ public class OccupationRepository {
         Occupation piano = new Occupation();
         piano.category = "хобби";
         piano.name = "Игра на пианино";
-        piano.description = "LOL! WHAT?!";
+        piano.description = "Изучение нот, запоминание мелодий";
         occupationList.add(piano);
 
         Occupation guitar = new Occupation();
         guitar.category = "хобби";
         guitar.name = "Игра на гитаре";
-        guitar.description = "LOL! WHAT?!";
+        guitar.description = "Перебирание струн";
         occupationList.add(guitar);
 
         Occupation workout = new Occupation();
         workout.category = "спорт";
         workout.name = "разминка";
-        workout.description = "LOL! WHAT?!";
+        workout.description = "Легкая активность";
         occupationList.add(workout);
 
         Occupation run = new Occupation();
         run.category = "спорт";
         run.name = "пробежка";
-        run.description = "LOL! WHAT?!";
+        run.description = "лоооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооооо";
         occupationList.add(run);
 
         Occupation tennis = new Occupation();
@@ -69,6 +69,17 @@ public class OccupationRepository {
             all_categ.add(all.get(i).name);
         }
         return all_categ;
+    }
+
+    public List<String> discription_of_occupation(String categ){
+        List<Occupation> all;
+
+        all = occupationDAO.loadOccupationByCategoriesName(categ);
+        List<String> all_descrigt = new ArrayList<>();
+        for (int i = 0; i < all.size(); i++) {
+            all_descrigt.add(all.get(i).description);
+        }
+        return all_descrigt;
     }
 
 }

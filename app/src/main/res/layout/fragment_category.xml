@@ -14,7 +14,7 @@
             android:layout_width="80dp"
             android:layout_height="60dp"
 
-            android:layout_marginStart="5dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="#29E1CD"
             android:scaleType="centerCrop"
@@ -25,41 +25,27 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
 
-        <TextView
-            android:id="@+id/textView_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="180dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="70dp"
-            android:text="TextView"
-            android:textColor="#29E1CD"
-            android:textSize="40dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <Button
             android:id="@+id/button_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="158dp"
             android:layout_marginEnd="159dp"
-            android:layout_marginBottom="14dp"
-            android:text="ДОБАВИТЬ"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="#29E1CD"
+            android:text="ДОБАВИТЬ"
             android:textColor="#0F0635"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent" />
 
         <ScrollView
             android:id="@+id/scroll_view"
             android:layout_width="360dp"
-            android:layout_height="530dp"
+            android:layout_height="500dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="23dp"
             app:layout_constraintBottom_toTopOf="@+id/button_add"
@@ -74,6 +60,21 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical" />
         </ScrollView>
+
+        <TextView
+            android:id="@+id/textView_activities"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="21dp"
+            android:layout_marginEnd="41dp"
+            android:layout_marginBottom="62dp"
+            android:text="Активности"
+            android:textColor="#29E1CD"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/scroll_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
