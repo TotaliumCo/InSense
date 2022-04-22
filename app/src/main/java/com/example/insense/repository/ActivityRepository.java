@@ -61,7 +61,7 @@ public class ActivityRepository {
                   Activities.add(activity.uid);
               }
           }
-          allGotActivities = (List<Activity>) db.userDao().loadAllByIds(Activities);
+          allGotActivities =  db.userDao().loadAllByIds(Activities);
           Collections.sort(allGotActivities, new MyComparator ());
           return  allGotActivities;
     }

@@ -5,7 +5,7 @@ import androidx.room.Database;
 import androidx.room.Entity;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
-@Database(entities = {Category.class}, version = 2, exportSchema = false)
+@Database(entities = {Category.class}, version = 4, exportSchema = false)
 public abstract class CategoryDB extends RoomDatabase {
     public abstract CategoryDAO categoryDAO();
 }
