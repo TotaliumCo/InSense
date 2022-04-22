@@ -7,7 +7,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,53 +44,24 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+
+        }
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentCategoryBinding = FragmentCategoryBinding.inflate(inflater, container, false);
-        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(v -> NavHostFragment.findNavController(CategoryFragment.this).navigate(R.id.action_categoryFragment_to_categoriesFragment));
-        String text = getArguments() != null ? getArguments().getString("arg1") : null;
-        LinearLayout linLayout = fragmentCategoryBinding.linearLayoutOccupations.findViewById(R.id.linear_layout_occupations);
 
-        LayoutInflater ltInflater = getLayoutInflater();
-        List<String> occupations_String = repository.occupation_by_category(text);
-        for (int i = 0; i < occupations_String.size(); i++) {
-            Log.d("myLogs", "i = " + i);
-            View item = ltInflater.inflate(R.layout.one_occupation_sample, linLayout, false);
-            Button tvName =  item.findViewById(R.id.button_occupation);
-            tvName.setText(occupations_String.get(i));
 
-            int finalI = i;
-            tvName.setOnClickListener(view1-> {
-                Log.d("myLol", "lol");
-             /*   savedInstanceState.putString("argCat", text);
-                savedInstanceState.putString("argOccupation", occupations_String.get(finalI));
-              */  NavHostFragment.findNavController(this).navigate(R.id.occupationFragment, savedInstanceState);
+        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(CategoryFragment.this).navigate(R.id.action_categoryFragment_to_categoriesFragment);
+            }
+        });
 
-            });
-            linLayout.addView(item);
-        }
-
-        TextView tv = fragmentCategoryBinding.textViewCategory;
-        switch (text) {
-            case "спорт":
-                tv.setText(text);
-                break;
-            case "музыка":
-                tv.setText(text);
-            case "учеба":
-                tv.setText(text);
-            case "работа":
-                tv.setText(text);
-            case "хобби":
-                tv.setText(text);
-            case "семья":
-                tv.setText(text);
-            case "другое":
-                tv.setText(text);
-        }
 
         return fragmentCategoryBinding.getRoot();
     }
@@ -99,5 +69,30 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        /*TextView tv = view.findViewById(R.id.textView_category);*/
+
+
+        String text = getArguments().getString("arg1");
+       /* tv.setText(text);*/
+        List<String> all_ocuppations;
+        List<String> all_descriptions;
+
+
+        all_ocuppations = repository.occupation_by_category(text);
+        all_descriptions = repository.discription_of_occupation(text);
+        for (int i = 0; i < all_ocuppations.size(); i++) {
+            LinearLayout layout = (LinearLayout) view.findViewById(R.id.linear_layout_occupations);
+            View view1 = getLayoutInflater().inflate(R.layout.one_occupation_sample, null, false);
+            TextView textView = (TextView) view1.findViewById(R.id.button_occupation);
+            TextView textView1 = (TextView) view1.findViewById(R.id.textView_description_of_occupation);
+            textView.setText(all_ocuppations.get(i));
+            textView1.setText(all_descriptions.get(i));
+            layout.addView(view1);
+
+
+        }
+
     }
 }
+
+
