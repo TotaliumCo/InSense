@@ -26,4 +26,6 @@ public interface OccupationDAO {
     void updateOccupation(Occupation occupation);
     @Delete
     void delete(Occupation occupation);
+
+
 }
