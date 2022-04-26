@@ -62,16 +62,16 @@
         </ScrollView>
 
         <TextView
-            android:id="@+id/textView_activities"
+            android:id="@+id/textView_category"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
             android:layout_marginTop="21dp"
-            android:layout_marginEnd="41dp"
+            android:layout_marginEnd="60dp"
             android:layout_marginBottom="62dp"
             android:text="Активности"
             android:textColor="#29E1CD"
-            android:textSize="30dp"
+            android:textSize="35dp"
             app:layout_constraintBottom_toTopOf="@+id/scroll_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

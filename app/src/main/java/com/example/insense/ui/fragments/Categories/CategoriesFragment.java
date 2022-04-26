@@ -34,9 +34,12 @@ public class CategoriesFragment extends Fragment {
         Bundle bundle = new Bundle();
         fragmentCategoriesBinding = FragmentCategoriesBinding.inflate(inflater, container, false);
 
+
+
         fragmentCategoriesBinding.buttonCategoriesMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_mainFragment);
             }
         });
