@@ -21,7 +21,6 @@ public class CategoriesFragment extends Fragment {
     private FragmentCategoriesBinding fragmentCategoriesBinding;
 
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,86 +28,51 @@ public class CategoriesFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         Bundle bundle = new Bundle();
         fragmentCategoriesBinding = FragmentCategoriesBinding.inflate(inflater, container, false);
 
-        fragmentCategoriesBinding.buttonCategoriesMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_mainFragment);
-            }
-        });
-        fragmentCategoriesBinding.buttonCategoriesProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_profileFragment);
-            }
-        });
-        fragmentCategoriesBinding.buttonCategoriesCalendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_calendarFragment);
-            }
-        });
+        fragmentCategoriesBinding.buttonCategoriesMain.setOnClickListener(v -> NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_mainFragment));
+        fragmentCategoriesBinding.buttonCategoriesProfile.setOnClickListener(v -> NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_profileFragment));
+        fragmentCategoriesBinding.buttonCategoriesCalendar.setOnClickListener(v -> NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_calendarFragment));
 
 
-
-
-        fragmentCategoriesBinding.buttonSport.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString("arg1", "спорт");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-            }
-        });
-        fragmentCategoriesBinding.buttonMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString("arg1", "музыка");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-            }
-        });
-        fragmentCategoriesBinding.buttonStudy.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString("arg1", "учеба");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-            }
-        });
-        fragmentCategoriesBinding.buttonWork.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString("arg1", "работа");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-            }
-        });
-        fragmentCategoriesBinding.buttonHobby.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                bundle.putString("arg1", "хобби");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-            }
-        });
-        fragmentCategoriesBinding.buttonFamily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                bundle.putString("arg1", "семья");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment,bundle);
-            }
+        fragmentCategoriesBinding.buttonSport.setOnClickListener(v -> {
+            bundle.putString("arg1", "семья");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
         });
 
-        fragmentCategoriesBinding.buttonOther.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                bundle.putString("arg1", "другое");
-                NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-            }
+        fragmentCategoriesBinding.buttonSport.setOnClickListener(v -> {
+            bundle.putString("arg1", "спорт");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
         });
+        fragmentCategoriesBinding.buttonMusic.setOnClickListener(v -> {
+            bundle.putString("arg1", "музыка");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
+        });
+        fragmentCategoriesBinding.buttonStudy.setOnClickListener(v -> {
+            bundle.putString("arg1", "учеба");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
+        });
+        fragmentCategoriesBinding.buttonWork.setOnClickListener(v -> {
+            bundle.putString("arg1", "работа");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
+        });
+        fragmentCategoriesBinding.buttonHobby.setOnClickListener(v -> {
+            bundle.putString("arg1", "хобби");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
+        });
+        fragmentCategoriesBinding.buttonFamily.setOnClickListener(v -> {
 
+            bundle.putString("arg1", "семья");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
+        });
+        fragmentCategoriesBinding.buttonFamily.setOnClickListener(v -> fragmentCategoriesBinding.buttonOther.setOnClickListener(v1 -> {
+
+            bundle.putString("arg1", "другое");
+            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
+        }));
         return fragmentCategoriesBinding.getRoot();
 
     }

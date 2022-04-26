@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,76 +42,42 @@ public class CategoryFragment extends Fragment {
     OccupationDAO occupationDAO;
 
 
-
-
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentCategoryBinding = FragmentCategoryBinding.inflate(inflater, container, false);
+        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(v -> NavHostFragment.findNavController(CategoryFragment.this).navigate(R.id.action_categoryFragment_to_categoriesFragment));
+        String text = getArguments() != null ? getArguments().getString("arg1") : null;
+        LinearLayout linLayout = fragmentCategoryBinding.linearLayoutOccupations.findViewById(R.id.linear_layout_occupations);
 
+        LayoutInflater ltInflater = getLayoutInflater();
+        List<String> occupations_String = repository.occupation_by_category(text);
+        for (int i = 0; i < occupations_String.size(); i++) {
+            Log.d("myLogs", "i = " + i);
+            View item = ltInflater.inflate(R.layout.one_occupation_sample, linLayout, false);
+            Button tvName =  item.findViewById(R.id.button_occupation);
+            tvName.setText(occupations_String.get(i));
 
+            int finalI = i;
+            tvName.setOnClickListener(view1-> {
+                Log.d("myLol", "lol");
+             /*   savedInstanceState.putString("argCat", text);
+                savedInstanceState.putString("argOccupation", occupations_String.get(finalI));
+              */  NavHostFragment.findNavController(this).navigate(R.id.occupationFragment, savedInstanceState);
 
-
-        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CategoryFragment.this).navigate(R.id.action_categoryFragment_to_categoriesFragment);
-            }
-        });
-
-
-
-        return fragmentCategoryBinding.getRoot();
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        TextView tv = view.findViewById(R.id.textView_category);
-        /*TextView tv_occupation = view.findViewById(R.id.button_occupation);*/
-        String text = getArguments().getString("arg1");
-        List<String> all_ocuppations = new ArrayList<>();
-        ScrollView scrollView = (ScrollView) view.findViewById(R.id.scrollView);
-
-        all_ocuppations = repository.occupation_by_category("спорт");
-        for (int i = 0; i < all_ocuppations.size(); i++) {
-            LinearLayout layout = (LinearLayout) view.findViewById(R.id.linear_layout_occupations);
-            View view1 = getLayoutInflater().inflate(R.layout.one_occupation_sample, null);
-
-            layout.addView(view1);
-            /*view1.findViewById(R.id.button_occupation).setText()*/
-            TextView tv_occupation = layout.findViewById(R.id.button_occupation);
-            tv_occupation.setText(all_ocuppations.get(i));
-
-
+            });
+            linLayout.addView(item);
         }
 
-
-
-        switch (text){
+        TextView tv = fragmentCategoryBinding.textViewCategory;
+        switch (text) {
             case "спорт":
-                tv.setText("СПОРТ");
-                /*all_ocuppations = occupationDAO.loadOccupationByCategoriesName("спорт");
-                for (int i = 0; i < all_ocuppations.size(); i++) {
-                    View view1 = getLayoutInflater().inflate(R.layout.one_occupation_sample, null);
-                    layout.addView(view1);
-                }*/
-
-
-
-
-
-                /*tv.setText(all.get(2));*/
+                tv.setText(text);
                 break;
             case "музыка":
                 tv.setText(text);
@@ -125,5 +92,12 @@ public class CategoryFragment extends Fragment {
             case "другое":
                 tv.setText(text);
         }
+
+        return fragmentCategoryBinding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
     }
 }
