@@ -52,6 +52,13 @@ public class OccupationRepository {
         tennis.description = "LOL! WHAT?!";
         occupationList.add(tennis);
 
+        Occupation temp = new Occupation();
+        temp.category = "спорт";
+        temp.name = "игра в теннис";
+        temp.description = "LOL! WHAT?!";
+        occupationList.add(temp);
+
+
 
 
 
