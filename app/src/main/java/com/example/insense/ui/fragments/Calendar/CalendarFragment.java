@@ -8,6 +8,7 @@ import androidx.navigation.fragment.NavHostFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CalendarView;
 
 import com.example.insense.R;
 import com.example.insense.databinding.FragmentCalendarBinding;
@@ -16,6 +17,7 @@ import com.example.insense.databinding.FragmentCalendarBinding;
 public class CalendarFragment extends Fragment {
 
     private FragmentCalendarBinding fragmentCalendarBinding;
+    private CalendarView calendarView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,8 @@ public class CalendarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
         fragmentCalendarBinding = FragmentCalendarBinding.inflate(inflater, container, false);
         fragmentCalendarBinding.buttonCalendarMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,4 +51,9 @@ public class CalendarFragment extends Fragment {
         });
         return fragmentCalendarBinding.getRoot();
     }
+
+
+
+
+
 }

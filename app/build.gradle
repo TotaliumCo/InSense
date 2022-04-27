@@ -54,6 +54,11 @@ dependencies {
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
-
+    implementation 'com.github.applikeysolutions:cosmocalendar:1.0.4'
+    implementation 'jp.co.recruit_mp:LightCalendarView:1.0.1'
+    implementation 'com.roomorama:caldroid:3.0.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+
+
+
 }

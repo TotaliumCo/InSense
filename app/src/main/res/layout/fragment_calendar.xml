@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,22 +12,30 @@
 
 
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
-        <TextView
-            android:id="@+id/textView_profile"
-            android:layout_width="wrap_content"
+        <jp.co.recruit_mp.android.lightcalendarview.LightCalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="124dp"
-            android:layout_marginTop="260dp"
-            android:text="It is calendar"
-            android:textColor="#29E1CD"
-            android:textSize="35sp"
+            android:layout_marginTop="70dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:lcv_accentColor="@color/purple_200"
+            android:state_active = "true"
+            app:lcv_dayTextSize="18sp"
+            app:lcv_selectionColor="@color/purple_200"
+            app:lcv_textColor="@color/black"
+            app:lcv_firstDayOfWeek = "1"
+            app:lcv_weekDayTextSize="18sp" />
+
+
 
         <ImageButton
             android:id="@+id/button_calendar_main"
