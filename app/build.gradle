@@ -59,6 +59,10 @@ dependencies {
     implementation 'com.roomorama:caldroid:3.0.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
 
+    implementation 'com.github.mahimrocky:EventCalender:v1.0.0'
+
+
+
 
 
 }

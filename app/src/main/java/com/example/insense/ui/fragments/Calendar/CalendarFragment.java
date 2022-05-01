@@ -1,10 +1,14 @@
 package com.example.insense.ui.fragments.Calendar;
 
+import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,16 +16,29 @@ import android.widget.CalendarView;
 
 import com.example.insense.R;
 import com.example.insense.databinding.FragmentCalendarBinding;
+import com.skyhope.eventcalenderlibrary.CalenderEvent;
+import com.skyhope.eventcalenderlibrary.listener.CalenderDayClickListener;
+import com.skyhope.eventcalenderlibrary.model.DayContainerModel;
+import com.skyhope.eventcalenderlibrary.model.Event;
+
+import java.util.Calendar;
 
 
 public class CalendarFragment extends Fragment {
 
     private FragmentCalendarBinding fragmentCalendarBinding;
     private CalendarView calendarView;
+    private Calendar calendar = Calendar.getInstance();
+    int mHour=calendar.get(Calendar.HOUR_OF_DAY);
+    int mMinute=calendar.get(Calendar.MINUTE);
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
 
     }
 
@@ -49,11 +66,20 @@ public class CalendarFragment extends Fragment {
                 NavHostFragment.findNavController(CalendarFragment.this).navigate(R.id.action_calendarFragment_to_categoriesFragment);
             }
         });
+
         return fragmentCalendarBinding.getRoot();
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+       /* calendar.setFirstDayOfWeek(5);
+        CalenderEvent calenderEvent = view.findViewById(R.id.calender_event);
+        Event event = new Event(calendar.getTimeInMillis(), "Test");
+        event.setEventText("lol");
 
 
-
-
+        calenderEvent.addEvent(event);
+        calenderEvent.initCalderItemClickCallback(dayContainerModel -> Log.d(")))))", dayContainerModel.getDate()));*/
+    }
 }
