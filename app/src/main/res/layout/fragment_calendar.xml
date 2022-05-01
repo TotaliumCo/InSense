@@ -13,27 +13,30 @@
 
 
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
 
-        <jp.co.recruit_mp.android.lightcalendarview.LightCalendarView
-            android:id="@+id/calendarView"
+        <com.skyhope.eventcalenderlibrary.CalenderEvent
+            android:id="@+id/calender_event"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="80dp"
+
+            app:calender_background="#0F0635"
+            app:current_month_day_color="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/button_calendar_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:lcv_accentColor="@color/purple_200"
-            android:state_active = "true"
-            app:lcv_dayTextSize="18sp"
-            app:lcv_selectionColor="@color/purple_200"
-            app:lcv_textColor="@color/black"
-            app:lcv_firstDayOfWeek = "1"
-            app:lcv_weekDayTextSize="18sp" />
+            app:month_color="@color/white"
+            app:off_month_day_color="#8F77F3"
+            app:selected_day_text_color="#0F0635"
+            app:selector_color="#29E1CD"
+            app:week_name_color="@color/white" />
+
 
 
 
