@@ -40,15 +40,6 @@ public class MainFragment extends Fragment {
             if(App.getInstance().getGlobalTimer().getIsTimer()==false){ App.getInstance().getGlobalTimer().setTimer(true);}else
             { App.getInstance().getGlobalTimer().setTimer(false);} });
 
-        fragmentMainBinding.buttonMainProfile.setOnClickListener(v -> NavHostFragment.findNavController(
-                MainFragment.this).navigate(R.id.action_mainFragment_to_profileFragment));
-
-        fragmentMainBinding.buttonMainCalendar.setOnClickListener(v -> NavHostFragment.findNavController(
-                MainFragment.this).navigate(R.id.action_mainFragment_to_calendarFragment));
-
-        fragmentMainBinding.buttonMainCategories.setOnClickListener(v -> NavHostFragment.findNavController(
-                MainFragment.this).navigate(R.id.action_mainFragment_to_categoriesFragment ));
-
         return fragmentMainBinding.getRoot();
 
     }

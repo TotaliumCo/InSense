@@ -37,9 +37,6 @@ public class ProfileFragment extends Fragment {
             NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_starterFragment);
         });
         fragmentProfileBinding.buttonToSettings.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_settingsFragment));
-        fragmentProfileBinding.buttonProfileMain.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_mainFragment));
-        fragmentProfileBinding.buttonProfileCalendar.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_calendarFragment));
-        fragmentProfileBinding.buttonProfileCategories.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_categoriesFragment));
         return fragmentProfileBinding.getRoot();
     }
 

@@ -3,15 +3,19 @@
 
     <item android:id="@id/clocks"
         android:title="clocks"
+        android:icon="@drawable/button_home"
         />
 
     <item android:id="@id/calendar"
-        android:title="settings"/>
+        android:title="settings"
+        android:icon="@drawable/button_calendar"/>
 
     <item android:id="@id/categories"
-        android:title="categories"/>
+        android:title="categories"
+        android:icon="@drawable/button_action"/>
 
     <item android:id="@id/profile"
-        android:title="profile"/>
+        android:title="profile"
+        android:icon="@drawable/button_profile"/>
 
 </menu>

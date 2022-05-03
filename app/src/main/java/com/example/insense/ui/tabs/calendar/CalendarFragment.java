@@ -39,28 +39,7 @@ public class CalendarFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
         fragmentCalendarBinding = FragmentCalendarBinding.inflate(inflater, container, false);
-        fragmentCalendarBinding.buttonCalendarMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CalendarFragment.this).navigate(R.id.action_calendarFragment_to_mainFragment);
-            }
-        });
-        fragmentCalendarBinding.buttonCalendarProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CalendarFragment.this).navigate(R.id.action_calendarFragment_to_profileFragment);
-            }
-        });
-        fragmentCalendarBinding.buttonCalendarCategories.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CalendarFragment.this).navigate(R.id.action_calendarFragment_to_categoriesFragment);
-            }
-        });
-
         return fragmentCalendarBinding.getRoot();
     }
 

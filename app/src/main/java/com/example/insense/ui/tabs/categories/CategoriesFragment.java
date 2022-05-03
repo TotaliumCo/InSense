@@ -25,21 +25,16 @@ public class CategoriesFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Bundle bundle = new Bundle();
+        new Bundle();
         fragmentCategoriesBinding = FragmentCategoriesBinding.inflate(inflater, container, false);
+        buttonsBinding(new Bundle());
+        return fragmentCategoriesBinding.getRoot();
 
-        fragmentCategoriesBinding.buttonCategoriesMain.setOnClickListener(v -> NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_mainFragment));
-        fragmentCategoriesBinding.buttonCategoriesProfile.setOnClickListener(v -> NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_profileFragment));
-        fragmentCategoriesBinding.buttonCategoriesCalendar.setOnClickListener(v -> NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_calendarFragment));
+    }
 
-
-        fragmentCategoriesBinding.buttonSport.setOnClickListener(v -> {
-            bundle.putString("arg1", "семья");
-            NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-        });
-
+    private void buttonsBinding(Bundle bundle) {
         fragmentCategoriesBinding.buttonSport.setOnClickListener(v -> {
             bundle.putString("arg1", "спорт");
             NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
@@ -65,12 +60,10 @@ public class CategoriesFragment extends Fragment {
             bundle.putString("arg1", "семья");
             NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
         });
-        fragmentCategoriesBinding.buttonFamily.setOnClickListener(v -> fragmentCategoriesBinding.buttonOther.setOnClickListener(v1 -> {
+        fragmentCategoriesBinding.buttonOther.setOnClickListener(v -> {
 
             bundle.putString("arg1", "другое");
             NavHostFragment.findNavController(CategoriesFragment.this).navigate(R.id.action_categoriesFragment_to_categoryFragment, bundle);
-        }));
-        return fragmentCategoriesBinding.getRoot();
-
+        });
     }
 }
