@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#0F0635"
-        tools:context=".ui.fragments.Settings.SettingsFragment">
+        tools:context=".ui.tabs.profile.Settings.SettingsFragment">
 
         <ImageButton
             android:id="@+id/button_back_settings"

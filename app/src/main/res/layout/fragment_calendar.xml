@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
-
-
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#0F0635"
-    tools:context=".ui.fragments.Calendar.CalendarFragment">
-
-
-
+    tools:context=".ui.tabs.calendar.CalendarFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -36,9 +28,6 @@
             app:selected_day_text_color="#0F0635"
             app:selector_color="#29E1CD"
             app:week_name_color="@color/white" />
-
-
-
 
         <ImageButton
             android:id="@+id/button_calendar_main"
@@ -95,6 +84,4 @@
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>

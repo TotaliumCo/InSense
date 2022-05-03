@@ -2,7 +2,7 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.fragments.Occupation.OccupationFragment"
+    tools:context=".ui.tabs.categories.Category.Occupation.OccupationFragment"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#0F0635">
 
