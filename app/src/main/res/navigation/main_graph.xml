@@ -18,9 +18,5 @@
         android:id="@+id/tabsFragment"
         android:name="com.example.insense.ui.tabs.TabsFragment"
         android:label="fragment_tabs"
-        tools:layout="@layout/fragment_tabs" >
-        <action
-            android:id="@+id/action_tabsFragment_to_authenticationFragment"
-            app:destination="@id/authenticationFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_tabs" />
 </navigation>

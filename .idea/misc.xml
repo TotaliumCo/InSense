@@ -11,19 +11,20 @@
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_activity.xml" value="0.136" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_authentication.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_binding.xml" value="0.22604166666666667" />
-        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_calendar.xml" value="0.11302083333333333" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_calendar.xml" value="0.12" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_categories.xml" value="0.17119565217391305" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_category.xml" value="0.13125" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_import.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_login.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_mail_chosen_authentication.xml" value="0.19270833333333334" />
-        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_main.xml" value="0.264" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_main.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_occupation.xml" value="0.17119565217391305" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_rate_of_occupation.xml" value="0.11302083333333333" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_register.xml" value="0.16799999999999998" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_splash.xml" value="0.25416666666666665" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_starter.xml" value="0.25416666666666665" />
-        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_tabs.xml" value="0.1578125" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_tabs.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/layout.xml" value="0.24010416666666667" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/one_occupation_sample.xml" value="0.1546875" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/menu/menu_tabs.xml" value="0.25416666666666665" />

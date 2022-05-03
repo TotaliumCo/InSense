@@ -6,6 +6,6 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.insense.ui.tabs.main."
+        android:name="com.example.insense.ui.tabs.main.MainFragment"
         android:label="MainFragment" />
 </navigation>
