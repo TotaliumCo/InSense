@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/settingsFragment"
+    app:labelVisibilityMode="unlabeled">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.LoginFragment"
+        android:label="Авторизация"
+
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.insense.ui.tabs.main.MainFragment"
+        android:label="Домашняя страница"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_bindingFragment"
+            app:destination="@id/bindingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.insense.ui.tabs.calendar.CalendarFragment"
+        android:label="Календарь"
+        tools:layout="@layout/fragment_calendar">
+        <action
+            android:id="@+id/action_calendarFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.insense.ui.tabs.profile.ProfileFragment"
+        android:label="Профиль"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_starterFragment"
+            app:destination="@id/starterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.insense.ui.tabs.categories.CategoriesFragment"
+        android:label="Категории"
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.CategoryFragment"
+        android:label="Категория"
+        tools:layout="@layout/fragment_category">
+        <argument
+            android:name="MyArg"
+            android:defaultValue="default" />
+        <action
+            android:id="@+id/action_categoryFragment_to_occupationFragment"
+            app:destination="@id/occupationFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_importFragment"
+            app:destination="@id/importFragment" />
+        <action
+            android:id="@+id/action_categoryFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/occupationFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.OccupationFragment"
+        android:label="fragment_occupation"
+        tools:layout="@layout/fragment_occupation">
+        <action
+            android:id="@+id/action_occupationFragment_to_rateOfOccupationFragment"
+            app:destination="@id/rateOfOccupationFragment" />
+        <action
+            android:id="@+id/action_occupationFragment_to_activityFragment"
+            app:destination="@id/activityFragment" />
+        <action
+            android:id="@+id/action_occupationFragment_to_exportFragment"
+            app:destination="@id/exportFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/rateOfOccupationFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.RateOfOccupation.RateOfOccupationFragment"
+        android:label="fragment_rate_of_occupation"
+        tools:layout="@layout/fragment_rate_of_occupation" />
+    <fragment
+        android:id="@+id/activityFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.Activity.ActivityFragment"
+        android:label="fragment_activity"
+        tools:layout="@layout/fragment_activity">
+        <action
+            android:id="@+id/action_activityFragment_to_bindingFragment"
+            app:destination="@id/bindingFragment" />
+        <action
+            android:id="@+id/action_activityFragment_to_bindingFragment2"
+            app:destination="@id/bindingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/importFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.Import.ImportFragment"
+        android:label="fragment_import"
+        tools:layout="@layout/fragment_import" />
+    <fragment
+        android:id="@+id/exportFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.Export.ExportFragment"
+        android:label="fragment_export"
+        tools:layout="@layout/fragment_export" />
+    <fragment
+        android:id="@+id/bindingFragment"
+        android:name="com.example.insense.ui.tabs.Binding.BindingFragment"
+        android:label="fragment_binding"
+        tools:layout="@layout/fragment_binding" />
+    <fragment
+        android:id="@+id/starterFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.StarterFragment"
+        android:label="fragment_starter"
+        tools:layout="@layout/fragment_starter" >
+        <action
+            android:id="@+id/action_starterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_starterFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.insense.ui.tabs.profile.Settings.SettingsFragment"
+        android:label="Настройки"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+</navigation>

@@ -2,7 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.fragments.Category.CategoryFragment"
+    tools:context=".ui.tabs.categories.Category.CategoryFragment"
     android:background="#0F0635">
 
     <androidx.constraintlayout.widget.ConstraintLayout

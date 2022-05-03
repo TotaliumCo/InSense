@@ -6,7 +6,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.Export.ExportFragment">
+        tools:context=".ui.tabs.categories.Category.Occupation.Export.ExportFragment">
 
         <!-- TODO: Update blank fragment layout -->
         <TextView
