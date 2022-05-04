@@ -43,10 +43,13 @@ public class MainActivity extends AppCompatActivity {
                 authenticationState -> {
                     if (authenticationState == LoginViewModel.AuthenticationState.AUTHENTICATED) {
                         navGraph.setStartDestination(getTabsDestination());
+                        navController.setGraph(navGraph);
+                        navController.navigate(getTabsDestination());
                     } else {
                         navGraph.setStartDestination(getSignInDestination());
+                        navController.setGraph(navGraph);
+                        navController.navigate(getSignInDestination());
                     }
-                    navController.setGraph(navGraph);
                 });
     }
 

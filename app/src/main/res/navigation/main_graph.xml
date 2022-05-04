@@ -7,12 +7,9 @@
 
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="com.example.insense."
-        android:label="fragment_tabs"
-        tools:layout="@layout/fragment_tabs" >
-        <!--<action
-            android:id="@+id/action_authenticationFragment_to_tabsFragment"
-            app:destination="@id/tabsFragment" />-->
+        android:name="com.example.insense.ui.authentication.AuthenticationFragment"
+        android:label="fragment_authentication"
+        tools:layout="@layout/fragment_authentication" >
     </fragment>
     <fragment
         android:id="@+id/tabsFragment"

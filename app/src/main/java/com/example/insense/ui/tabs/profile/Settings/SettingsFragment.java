@@ -28,12 +28,8 @@ public class SettingsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentSettingsBinding = FragmentSettingsBinding.inflate(inflater, container, false);
-        fragmentSettingsBinding.buttonBackSettings.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(SettingsFragment.this).navigate(R.id.action_settingsFragment_to_profileFragment);
-            }
-        });
+        fragmentSettingsBinding.buttonBackSettings.setOnClickListener(v -> NavHostFragment
+                .findNavController(SettingsFragment.this).popBackStack());
         return fragmentSettingsBinding.getRoot();
     }
 }
