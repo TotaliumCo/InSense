@@ -41,33 +41,19 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-
-
-        }
     }
-
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentCategoryBinding = FragmentCategoryBinding.inflate(inflater, container, false);
-
-
         fragmentCategoryBinding.buttonBackCategory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(CategoryFragment.this).navigate(R.id.action_categoryFragment_to_categoriesFragment);
+                NavHostFragment.findNavController(CategoryFragment.this).popBackStack();
             }
         });
-
-
-
-
-
-
 
 
         return fragmentCategoryBinding.getRoot();
@@ -93,7 +79,6 @@ public class CategoryFragment extends Fragment {
 
 
         expListView = (ExpandableListView) view.findViewById(R.id.expListView);
-
 
 
         all_occupations = repository_occupation.occupation_by_category(text);
@@ -130,11 +115,6 @@ public class CategoryFragment extends Fragment {
                 return false;
             }
         });*/
-
-
-
-
-
 
 
     }

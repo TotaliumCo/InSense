@@ -14,6 +14,7 @@ import com.example.insense.R;
 import com.example.insense.databinding.FragmentProfileBinding;
 import com.example.insense.ui.authentication.authentication.Login.LoginViewModel;
 import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class ProfileFragment extends Fragment {
@@ -33,10 +34,9 @@ public class ProfileFragment extends Fragment {
 
         fragmentProfileBinding = FragmentProfileBinding.inflate(inflater, container, false);
         fragmentProfileBinding.buttonToSettings2.setOnClickListener(v -> {
-            AuthUI.getInstance().signOut(getContext());
-            NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_starterFragment);
+            FirebaseAuth.getInstance().signOut();
         });
-        fragmentProfileBinding.buttonToSettings.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_settingsFragment));
+        fragmentProfileBinding.buttonToSettings.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_settingsFragment2));
         return fragmentProfileBinding.getRoot();
     }
 
