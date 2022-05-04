@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -22,55 +24,26 @@ import com.google.android.material.navigation.NavigationBarView;
 public class TabsFragment extends Fragment {
     FragmentTabsBinding fragmentTabsBinding;
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        OnBackPressedCallback callback = new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+
+            }
+        };
+        requireActivity().getOnBackPressedDispatcher().addCallback(this,callback);
+
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentTabsBinding = FragmentTabsBinding.inflate(inflater, container, false);
         NavHostFragment navHostFragment = (NavHostFragment) getChildFragmentManager().findFragmentById(R.id.tabsContainer);
+        assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
-        NavOptions options = new NavOptions.Builder()
-                .setLaunchSingleTop(true)
-                .setEnterAnim(R.anim.enter_from_bottom)
-                .setExitAnim(R.anim.exit_to_top)
-                .setPopEnterAnim(R.anim.enter_from_top)
-                .setPopExitAnim(R.anim.exit_to_bottom)
-                .setPopUpTo(navController.getGraph().getStartDestinationId(), false)
-                .build();
-
-        fragmentTabsBinding.bottomNavigationView.setOnItemSelectedListener((NavigationBarView.OnItemSelectedListener)
-                item -> {
-                    if(item.getItemId()==0){
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated1");
-                        navController.navigate(R.id.clocks,savedInstanceState,options);
-                    }else if (item.getItemId()==1){
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated2");
-                        navController.navigate(R.id.calendar,savedInstanceState,options);
-                    }else if (item.getItemId()==2){
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated3");
-                        navController.navigate(R.id.categories,savedInstanceState,options);
-                    }else{
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated4");
-                        navController.navigate(R.id.profile,savedInstanceState,options);
-                    }
-                    return false;
-                });
-
-        fragmentTabsBinding.bottomNavigationView.setOnItemReselectedListener((NavigationBarView.OnItemReselectedListener)
-                item -> {
-                    if(item.getItemId()==0){
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated1");
-                        navController.navigate(R.id.clocks,savedInstanceState,options);
-                    }else if (item.getItemId()==1){
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated2");
-                        navController.navigate(R.id.calendar,savedInstanceState,options);
-                    }else if (item.getItemId()==2){
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated3");
-                        navController.navigate(R.id.categories,savedInstanceState,options);
-                    }else{
-                        Log.i("NAVtabs", "onCreateView: toclocknavigated4");
-                        navController.navigate(R.id.profile,savedInstanceState,options);
-                    }
-                });
 
         NavigationUI.setupWithNavController(fragmentTabsBinding.bottomNavigationView, navController);
         return fragmentTabsBinding.getRoot();
