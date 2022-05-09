@@ -39,11 +39,13 @@
                     android:layout_width="271dp"
                     android:layout_height="295dp"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="-10dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="27dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginBottom="7dp"
                     android:src="@drawable/image_hourglasses"
-                    app:layout_constraintBottom_toTopOf="@id/title"
+                    app:layout_constraintBottom_toTopOf="@+id/title"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.52"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,11 +54,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-10dp"
+                    android:layout_marginBottom="200dp"
                     android:gravity="center"
                     android:text="In Time"
                     android:textColor="#28F8FF"
                     android:textSize="40dp"
-                    app:layout_constraintBottom_toTopOf="@id/authenticationContainer"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/picture" />
@@ -64,11 +67,9 @@
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/authenticationContainer"
                     android:name="androidx.navigation.fragment.NavHostFragment"
-                    android:layout_width="wrap_content"
+                    android:layout_width="340dp"
                     android:layout_height="wrap_content"
-
                     android:layout_marginBottom="30dp"
-                    android:background="@drawable/lil_background"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

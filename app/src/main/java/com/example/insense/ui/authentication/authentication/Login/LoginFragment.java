@@ -1,14 +1,22 @@
 package com.example.insense.ui.authentication.authentication.Login;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.insense.R;
 import com.example.insense.databinding.FragmentLoginBinding;
@@ -48,11 +56,20 @@ public class LoginFragment extends Fragment {
     }
 
     private void observeAuthenticationState() {
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
         viewModel.authenticationState.observe(getViewLifecycleOwner(),
                 authenticationState -> {
                     binding.signin.setOnClickListener(view -> {
+                                /*NavController navController = NavHostFragment.findNavController(LoginFragment.this);
+                                navController.navigate(R.id.action_loginFragment_to_loginGoogleFragment);
+                                Log.i("NAV", "action_loginFragment_to_loginGoogleFragment");*/
                                 List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
-                                startActivityForResult(
+                               startActivityForResult(
                                         AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
                                                 providers
                                         ).build(), SIGN_IN_RESULT_CODE
@@ -60,18 +77,12 @@ public class LoginFragment extends Fragment {
                             }
                     );
                     binding.signin2.setOnClickListener(view -> {
-                                List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.EmailBuilder().build());
-                                startActivityForResult(
-                                        AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build()
-                                        , SIGN_IN_RESULT_CODE);
+                                NavController navController = NavHostFragment.findNavController(LoginFragment.this);
+                                navController.navigate(R.id.action_loginFragment_to_loginEmailFragment);
+                                Log.i("NAV", "onCreateView: nav action_loginFragment_to_loginEmailFragment");
                             }
                     );
                 });
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
         return binding.getRoot();
     }
 

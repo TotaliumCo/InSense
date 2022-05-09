@@ -1,27 +1,21 @@
 package com.example.insense.ui.activities;
 
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.NavGraph;
 import androidx.navigation.fragment.NavHostFragment;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.util.Log;
-
 import com.example.insense.R;
 import com.example.insense.ui.authentication.authentication.Login.LoginViewModel;
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     LoginViewModel viewModel = new LoginViewModel();
     private NavController navController;
-    private Set topLevelDestinations;
-    private NavController.OnDestinationChangedListener destinationListener;
-
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -31,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getApplicationContext();
         navController = getRootNavController();
-        Log.i("NAV","navController found");
+        Log.i("NAV", "navController found");
         prepareRootNavController(navController);
     }
 
