@@ -1,17 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.authentication.AuthenticationFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/authenticationContainer"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:navGraph="@navigation/authentication_graph" />
+        android:background="@drawable/authentication_background"
+        tools:context=".ui.authentication.AuthenticationFragment">
 
-</FrameLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:padding="20dp"
+            android:layout_margin="30dp"
+            android:layout_height="match_parent"
+            android:shadowColor="#ff000000"
+            app:cardBackgroundColor="#FF222222"
+            app:cardCornerRadius="60dp"
+            android:elevation="200dp"
+            app:cardElevation="40dp"
+            android:shadowRadius="20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#FF131313"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/picture"
+                    android:layout_width="271dp"
+                    android:layout_height="295dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="-10dp"
+                    android:src="@drawable/image_hourglasses"
+                    app:layout_constraintBottom_toTopOf="@id/title"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.52"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:gravity="center"
+                    android:text="In Time"
+                    android:textColor="#28F8FF"
+                    android:textSize="40dp"
+                    app:layout_constraintBottom_toTopOf="@id/authenticationContainer"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/picture" />
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/authenticationContainer"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/lil_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/title"
+                    app:navGraph="@navigation/authentication_graph" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,23 +1,18 @@
 package com.example.insense.ui.authentication.authentication.Login;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.Navigation;
-
-
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.insense.R;
 import com.example.insense.databinding.FragmentLoginBinding;
 import com.firebase.ui.auth.AuthUI;
-
-import static androidx.navigation.Navigation.findNavController;
 
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +31,7 @@ public class LoginFragment extends Fragment {
     public LoginFragment() {
     }
 
-  public static LoginFragment newInstance(String param1, String param2) {
+    public static LoginFragment newInstance(String param1, String param2) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
         fragment.setArguments(args);
@@ -54,31 +49,29 @@ public class LoginFragment extends Fragment {
 
     private void observeAuthenticationState() {
         viewModel.authenticationState.observe(getViewLifecycleOwner(),
-
-                authenticationState ->{
-                    if(authenticationState == LoginViewModel.AuthenticationState.AUTHENTICATED){
-                        binding.signin.setOnClickListener(view1 -> Navigation.findNavController(view1).navigate(R.id.mainFragment));
-                    }else{
-                        binding.signin.setOnClickListener(view123-> {
-                                    List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build(),
-                                            new AuthUI.IdpConfig.EmailBuilder().build());
-                                    startActivityForResult(
-                                            AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
-                                                    providers
-                                            ).build(), SIGN_IN_RESULT_CODE
-                                    );
-                                }
-                        );
-                        binding.signup.setOnClickListener(view12 -> {
-                        //    Navigation.findNavController(view).navigate(R.id.registerFragment);
-                        });
-                    }
+                authenticationState -> {
+                    binding.signin.setOnClickListener(view -> {
+                                List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.GoogleBuilder().build());
+                                startActivityForResult(
+                                        AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(
+                                                providers
+                                        ).build(), SIGN_IN_RESULT_CODE
+                                );
+                            }
+                    );
+                    binding.signin2.setOnClickListener(view -> {
+                                List<AuthUI.IdpConfig> providers = Arrays.asList(new AuthUI.IdpConfig.EmailBuilder().build());
+                                startActivityForResult(
+                                        AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build()
+                                        , SIGN_IN_RESULT_CODE);
+                            }
+                    );
                 });
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_login,container,false);
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
         return binding.getRoot();
     }
 
