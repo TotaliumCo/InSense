@@ -12,6 +12,7 @@ import android.util.Log;
 
 import com.example.insense.R;
 import com.example.insense.ui.authentication.authentication.Login.LoginViewModel;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Set;
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     private NavController navController;
     private Set topLevelDestinations;
     private NavController.OnDestinationChangedListener destinationListener;
+
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
