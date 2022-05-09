@@ -1,18 +1,17 @@
 package com.example.insense.ui.tabs.categories.Category;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.insense.R;
 import com.example.insense.application.App;
@@ -48,12 +47,7 @@ public class CategoryFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentCategoryBinding = FragmentCategoryBinding.inflate(inflater, container, false);
-        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(CategoryFragment.this).popBackStack();
-            }
-        });
+        fragmentCategoryBinding.buttonBackCategory.setOnClickListener(v -> NavHostFragment.findNavController(CategoryFragment.this).popBackStack());
 
 
         return fragmentCategoryBinding.getRoot();

@@ -13,7 +13,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app2:srcCompat="@drawable/lol_sand_hourglasses"
+        app2:srcCompat="@drawable/image_hourglasses"
         android:scaleType="center"
         android:scaleX="0.5"
         android:scaleY="0.5"
