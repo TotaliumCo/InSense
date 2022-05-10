@@ -1,10 +1,16 @@
 package com.example.insense.services.time;
 
+import android.os.Build;
 import android.os.CountDownTimer;
 import android.util.Log;
 
+import androidx.annotation.RequiresApi;
+
 import com.example.insense.application.App;
 import com.example.insense.repository.room.activityDB.Activity;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 public class GlobalTimer {
     Activity mActivity;
@@ -47,9 +53,16 @@ public class GlobalTimer {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public void setTimerByActivity(Activity activity) {
         this.mActivity = activity;
-        mLeftTimeInMillis = (int) (-activity.endDate.getSecs() + activity.startDate.getSecs())*1000;
+        ZoneId zoneId = ZoneId.of("Europe/Paris");
+        ZonedDateTime zdt_end = ZonedDateTime.of(activity.endDate, zoneId);
+        long millis_end = zdt_end.toInstant().toEpochMilli();
+
+        ZonedDateTime zdt_start = ZonedDateTime.of(activity.startDate, zoneId);
+        long millis_start = zdt_start.toInstant().toEpochMilli();
+        mLeftTimeInMillis = (int) (-millis_end + millis_start);
         startTime = mLeftTimeInMillis;
     }
 

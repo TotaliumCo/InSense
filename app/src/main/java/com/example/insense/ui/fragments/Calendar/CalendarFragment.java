@@ -1,10 +1,12 @@
 package com.example.insense.ui.fragments.Calendar;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
@@ -13,15 +15,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CalendarView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.example.insense.R;
+import com.example.insense.application.App;
 import com.example.insense.databinding.FragmentCalendarBinding;
+import com.example.insense.repository.ActivityRepository;
+import com.example.insense.repository.room.activityDB.Activity;
+import com.example.insense.repository.room.activityDB.ActivityDAO;
 import com.skyhope.eventcalenderlibrary.CalenderEvent;
 import com.skyhope.eventcalenderlibrary.listener.CalenderDayClickListener;
 import com.skyhope.eventcalenderlibrary.model.DayContainerModel;
 import com.skyhope.eventcalenderlibrary.model.Event;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Calendar;
+import java.util.List;
 
 
 public class CalendarFragment extends Fragment {
@@ -29,8 +41,11 @@ public class CalendarFragment extends Fragment {
     private FragmentCalendarBinding fragmentCalendarBinding;
     private CalendarView calendarView;
     private Calendar calendar = Calendar.getInstance();
-    int mHour=calendar.get(Calendar.HOUR_OF_DAY);
-    int mMinute=calendar.get(Calendar.MINUTE);
+
+
+    ActivityDAO activityDao;
+    ActivityRepository repository_activity = App.instance.getActivityRepository();
+    List<Activity> all;
 
 
 
@@ -40,8 +55,12 @@ public class CalendarFragment extends Fragment {
 
 
 
+
+
+
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -66,6 +85,78 @@ public class CalendarFragment extends Fragment {
                 NavHostFragment.findNavController(CalendarFragment.this).navigate(R.id.action_calendarFragment_to_categoriesFragment);
             }
         });
+        all = repository_activity.all_activities();
+
+        /*for(int i = 0; i < all.size(); i++) {
+            ZoneId zoneId = ZoneId.of("Europe/Moscow");
+            ZonedDateTime zdt = ZonedDateTime.of(all.get(i).endDate, zoneId);
+            long millis = zdt.toInstant().toEpochMilli();
+            Event event = new Event(millis, all.get(i).name);
+            fragmentCalendarBinding.calenderEvent.addEvent(event);
+        }*/
+/*                Event event = new Event(tim*1000, all.get(3).name);
+
+        fragmentCalendarBinding.calenderEvent.addEvent(event);*/
+
+
+
+    /*    TextView textView_name_of_occupation = (TextView) view1.findViewById(R.id.name_of_occupation);
+        TextView textView_time_start_end = (TextView) view1.findViewById(R.id.time_start_end);
+        TextView textView_description_of_activity = (TextView) view1.findViewById(R.id.description_of_activity);*/
+
+
+
+
+        fragmentCalendarBinding. calenderEvent.initCalderItemClickCallback(dayContainerModel -> {
+            Log.i("LOL", "onCreateView: ");
+            CalenderEvent calenderEvent = container.findViewById(R.id.calender_event);
+
+
+
+
+            ScrollView scrollView = container.findViewById(R.id.scroll_calendar_event);
+            LinearLayout layout = (LinearLayout) container.findViewById(R.id.layout_all_activities_in_one_day);
+            layout.removeAllViews();
+            for(int i = 0; i < all.size(); i++) {
+                ZoneId zoneId = ZoneId.of("Europe/Moscow");
+                ZonedDateTime zdt = ZonedDateTime.of(all.get(i).endDate, zoneId);
+                long millis = zdt.toInstant().toEpochMilli();
+                Event event = new Event(millis, all.get(i).name, Color.argb(100, 15, 6, 53));
+                fragmentCalendarBinding.calenderEvent.addEvent(event);
+                dayContainerModel.setEvent(event);
+
+
+
+
+                if (dayContainerModel.isHaveEvent() && dayContainerModel.getDay() == all.get(i).endDate.getDayOfMonth() && dayContainerModel.getYear() == all.get(i).endDate.getYear()) {
+                    /*layout.removeAllViews();*/
+
+                    View view1 = getLayoutInflater().inflate(R.layout.actions_calendar, null, false);
+                    TextView textView_name_of_activity = (TextView) view1.findViewById(R.id.name_of_activity);
+                    TextView textView_description_of_activity = (TextView) view1.findViewById(R.id.description_of_activity);
+                    TextView textView_name_of_occupation = (TextView) view1.findViewById(R.id.name_of_occupation);
+                    TextView textView_time_start_end = (TextView) view1.findViewById(R.id.time_start_end);
+                    String str = all.get(i).startDate.getHour() + ":" + all.get(i).startDate.getMinute() + " - " + all.get(i).endDate.getHour() + ":" + all.get(i).endDate.getMinute();
+
+
+                    textView_name_of_activity.setText(dayContainerModel.getEvent().getEventText());
+                    textView_description_of_activity.setText("Описание: " + all.get(i).description);
+                    textView_name_of_occupation.setText( "Занятие: " + all.get(i).occupation);
+                    textView_time_start_end.setText("Время: " + str);
+
+
+                    layout.addView(view1);
+
+                    Log.d("jjjjj", dayContainerModel.getEvent().getEventText());
+
+
+                } else {
+
+                }
+            }
+
+
+        });
 
         return fragmentCalendarBinding.getRoot();
     }
@@ -73,13 +164,5 @@ public class CalendarFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-       /* calendar.setFirstDayOfWeek(5);
-        CalenderEvent calenderEvent = view.findViewById(R.id.calender_event);
-        Event event = new Event(calendar.getTimeInMillis(), "Test");
-        event.setEventText("lol");
-
-
-        calenderEvent.addEvent(event);
-        calenderEvent.initCalderItemClickCallback(dayContainerModel -> Log.d(")))))", dayContainerModel.getDate()));*/
     }
 }

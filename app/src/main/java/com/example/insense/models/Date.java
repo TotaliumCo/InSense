@@ -6,7 +6,7 @@ public class Date {
 
     long secs;
 
-    public Date(long year,long day,long hour,long minute,long sec){
+    public Date(long year, long day,long hour,long minute,long sec){
         this.year=year;
         this.day = day;
         this.hour=hour;

@@ -15,6 +15,8 @@ import com.example.insense.repository.room.activityDB.Activity;
 import com.example.insense.repository.room.categoryDB.Category;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -44,7 +46,10 @@ public class Clocks24H {
         for (Activity act: repository.ActivitiesFromTo(new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0),
                 new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR+1,0,0,0)))
         {
-            Log.i("ACT", String.valueOf(act.startDate.getSecs()));
+            ZoneId zoneId = ZoneId.of("Europe/Moscow");
+            ZonedDateTime zdt_start = ZonedDateTime.of(act.startDate, zoneId);
+            long millis_start = zdt_start.toInstant().toEpochMilli();
+            Log.i("ACT", String.valueOf(millis_start));
             segments.add(new Segment(act));
         }
         Log.i("SEG", "Clocks24H: "+segments.toString());
