@@ -40,9 +40,7 @@
                     android:layout_height="295dp"
                     android:layout_gravity="center"
                     android:layout_marginStart="40dp"
-                    android:layout_marginTop="27dp"
                     android:layout_marginEnd="40dp"
-                    android:layout_marginBottom="7dp"
                     android:src="@drawable/image_hourglasses"
                     app:layout_constraintBottom_toTopOf="@+id/title"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -51,18 +49,18 @@
 
                 <TextView
                     android:id="@+id/title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="-10dp"
-                    android:layout_marginBottom="200dp"
+                    android:layout_width="264dp"
+                    android:layout_height="45dp"
+                    android:layout_marginBottom="236dp"
                     android:gravity="center"
                     android:text="In Time"
                     android:textColor="#28F8FF"
                     android:textSize="40dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.494"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/picture" />
+                    app:layout_constraintTop_toBottomOf="@+id/picture" />
 
                 <androidx.fragment.app.FragmentContainerView
                     android:id="@+id/authenticationContainer"
@@ -74,6 +72,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/title"
+                    app:layout_constraintVertical_bias="0.232"
                     app:navGraph="@navigation/authentication_graph" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
