@@ -1,5 +1,4 @@
 package com.example.insense.ui.tabs.main.Clocks.Parts;
-
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
@@ -12,8 +11,11 @@ import com.example.insense.application.App;
 import com.example.insense.models.Date;
 import com.example.insense.repository.ActivityRepository;
 import com.example.insense.repository.room.activityDB.Activity;
+import com.example.insense.repository.room.categoryDB.Category;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -22,7 +24,7 @@ import java.util.Calendar;
 public class Clocks24H {
 
     Canvas canvas;
-    ActivityRepository repository = App.getInstance().getActivityRepository();
+    ActivityRepository repository = App.instance.getActivityRepository();
     Paint digital_time_paint = new Paint();
     Paint time_arc_paint = new Paint();
     Paint circle_paint = new Paint();
@@ -43,7 +45,10 @@ public class Clocks24H {
         for (Activity act: repository.ActivitiesFromTo(new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0),
                 new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR+1,0,0,0)))
         {
-            Log.i("ACT", String.valueOf(act.startDate.getSecs()));
+            ZoneId zoneId = ZoneId.of("Europe/Moscow");
+            ZonedDateTime zdt_start = ZonedDateTime.of(act.startDate, zoneId);
+            long millis_start = zdt_start.toInstant().toEpochMilli();
+            Log.i("ACT", String.valueOf(millis_start));
             segments.add(new Segment(act));
         }
         Log.i("SEG", "Clocks24H: "+segments.toString());

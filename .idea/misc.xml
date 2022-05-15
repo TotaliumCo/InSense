@@ -5,12 +5,15 @@
       <map>
         <entry key="..\:/AndroidStudioProj/app/src/main/res/drawable/authentication_background.xml" value="0.1345" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/drawable/authentication_lil_fragment.xml" value="0.1345" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/drawable/layout_bg.xml" value="0.134" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/drawable/splash_background.xml" value="0.1345" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/actions_calendar.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/clock_face_fragment.xml" value="0.2359375" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_activity.xml" value="0.136" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_authentication.xml" value="0.176" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_binding.xml" value="0.22604166666666667" />
+        <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_calendar.xml" value="0.10104166666666667" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_categories.xml" value="0.17119565217391305" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_category.xml" value="0.13125" />
         <entry key="..\:/AndroidStudioProj/app/src/main/res/layout/fragment_code_received.xml" value="0.25416666666666665" />
