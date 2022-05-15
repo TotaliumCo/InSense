@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/authentication_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_loginEmailFragment"
+            app:destination="@id/loginEmailFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_loginGoogleFragment"
+            app:destination="@id/loginGoogleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginEmailFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.LoginEmailFragment"
+        android:label="fragment_login_email"
+        tools:layout="@layout/fragment_login_email" >
+        <action
+            android:id="@+id/action_loginEmailFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+        <action
+            android:id="@+id/action_loginEmailFragment_to_registrarionCompletedFragment"
+            app:destination="@id/registrarionCompletedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginGoogleFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.LoginGoogleFragment"
+        android:label="fragment_login_google"
+        tools:layout="@layout/fragment_login_google" >
+        <action
+            android:id="@+id/action_loginGoogleFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_codeReceivedFragment"
+            app:destination="@id/codeReceivedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/codeReceivedFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.CodeReceivedFragment"
+        android:label="fragment_code_received"
+        tools:layout="@layout/fragment_code_received" >
+        <action
+            android:id="@+id/action_codeReceivedFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrarionCompletedFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.RegistrarionCompletedFragment"
+        android:label="fragment_registrarion_completed"
+        tools:layout="@layout/fragment_registrarion_completed" >
+        <action
+            android:id="@+id/action_registrarionCompletedFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" />
+</navigation>

@@ -11,89 +11,31 @@
         android:layout_height="match_parent"
         >
 
-        <ImageButton
-            android:id="@+id/button_main_main"
-
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_home"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/button_main_profile"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_profile"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button_main_main"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/button_main_calendar"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_calendar"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_main_categories"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <ImageButton
-            android:id="@+id/button_main_categories"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_action"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
         <Button
             android:id="@+id/button_about_action"
-            android:layout_width="250dp"
-            android:layout_height="49dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="130dp"
+            android:layout_width="371dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp"
             android:backgroundTint="#29E1CD"
             android:text="About action"
             android:textColor="#0B1637"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/textView_from_user" />
 
         <LinearLayout
             android:id="@+id/clock_fragment"
             android:layout_width="341dp"
             android:layout_height="343dp"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="150dp"
             android:layout_marginEnd="80dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_main_profile"
+            android:layout_marginBottom="220dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_about_action"
-            app:layout_constraintVertical_bias="0.0"
-            android:orientation="horizontal" />
+            app:layout_constraintVertical_bias="1.0" />
 
         <TextView
             android:id="@+id/textView_from_user"
