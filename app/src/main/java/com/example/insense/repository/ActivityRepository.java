@@ -93,6 +93,8 @@ public class ActivityRepository {
         activities.add(draw_sketches);
 
 
+
+
         Activity draw_portraits = new Activity();
         draw_portraits.name = "Рисовать портреты";
         draw_portraits.description = "lol";

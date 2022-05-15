@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/name_of_activity"
@@ -12,20 +13,20 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textSize="23dp"
         android:textColor="#29E1CD"
+        android:textSize="23dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/time_start_end"
         android:layout_width="wrap_content"
-        android:textSize="20dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="15dp"
         android:text="TextView"
         android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_of_occupation" />
 
@@ -46,10 +47,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:textSize="20dp"
         android:layout_marginTop="15dp"
         android:text="TextView"
         android:textColor="@color/white"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/time_start_end" />
 </androidx.constraintlayout.widget.ConstraintLayout>
