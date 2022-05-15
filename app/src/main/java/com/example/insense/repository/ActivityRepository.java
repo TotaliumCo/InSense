@@ -30,7 +30,6 @@ public class ActivityRepository {
         Log.i("ACTIVEREPOSITORYCRATION", String.valueOf(context));
         List<Activity> activities = new ArrayList<Activity>(){};
 
-//ИГРА НА ПИАНИНО
         Activity learn_new_song = new Activity();
         learn_new_song.name = "Учить новую мелодию";
         learn_new_song.description = "lol";

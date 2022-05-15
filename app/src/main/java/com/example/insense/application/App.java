@@ -15,7 +15,6 @@ import com.example.insense.services.time.GlobalTimer;
 public class App extends Application {
     public static App instance;
 
-
     private ActivityRepository activityRepository;
     private OccupationRepository occupationRepository;
     private CategoryRepository categoryRepository;
@@ -28,12 +27,10 @@ public class App extends Application {
         super.onCreate();
         instance = this;
         globalTimer = new GlobalTimer();
-
         activityRepository = new ActivityRepository(getApplicationContext());
         occupationRepository = new OccupationRepository(getApplicationContext());
         categoryRepository = new CategoryRepository(getApplicationContext());
         globalTimer.setTimerByActivity(activityRepository.getDatabase().userDao().loadById(1));
-
     }
 
     public ActivityRepository getActivityRepository() {
@@ -45,5 +42,4 @@ public class App extends Application {
     public static App getInstance() {
         return instance;
     }
-
 }

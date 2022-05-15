@@ -2,13 +2,25 @@ package com.example.insense.ui.authentication.authentication.Login;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.insense.R;
+import com.example.insense.databinding.FragmentLoginEmailBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthMultiFactorException;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.MultiFactorResolver;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,10 +29,13 @@ import com.example.insense.R;
  */
 public class LoginEmailFragment extends Fragment {
 
+    FragmentLoginEmailBinding fragmentLoginEmailBinding;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private static final String TAG = "AUTH";
+    private FirebaseAuth mAuth;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -51,6 +66,7 @@ public class LoginEmailFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mAuth = FirebaseAuth.getInstance();
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -60,7 +76,128 @@ public class LoginEmailFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        fragmentLoginEmailBinding = FragmentLoginEmailBinding.inflate(inflater);
+        fragmentLoginEmailBinding.emailSignInButton.setOnClickListener(view -> {
+            String email = fragmentLoginEmailBinding.textEditGetMail.getText().toString();
+            String password = fragmentLoginEmailBinding.textEditGetPassword.getText().toString();
+            signIn(email, password);
+        });
+        fragmentLoginEmailBinding.emailCreateAccountButton.setOnClickListener(view -> {
+            String email = fragmentLoginEmailBinding.textEditGetMail.getText().toString();
+            String password = fragmentLoginEmailBinding.textEditGetPassword.getText().toString();
+            createAccount(email, password);
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login_email, container, false);
+        return fragmentLoginEmailBinding.getRoot();
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+    }
+
+    private void createAccount(String email, String password) {
+        Log.d(TAG, "createAccount:" + email);
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(requireActivity(), task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "createUserWithEmail:success");
+                        FirebaseUser user = mAuth.getCurrentUser();
+                        Toast.makeText(getContext(), "Succeeded",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(user);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                        Toast.makeText(getContext(), "Failed.",
+                                Toast.LENGTH_SHORT).show();
+                        updateUI(null);
+                    }
+
+                });
+    }
+
+    private void signIn(String email, String password) {
+        Log.d(TAG, "signIn:" + email);
+
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(getContext(), "Authentication succeeded.",Toast.LENGTH_SHORT).show();
+                            updateUI(user);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(getContext(), "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(null);
+                        }
+
+                    }
+                });
+    }
+
+    private void signOut() {
+        mAuth.signOut();
+        updateUI(null);
+    }
+
+
+    private void reload() {
+        mAuth.getCurrentUser().reload().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                updateUI(mAuth.getCurrentUser());
+                Toast.makeText(getContext(),
+                        "Reload successful!",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                Log.e(TAG, "reload", task.getException());
+                Toast.makeText(getContext(),
+                        "Failed to reload user.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private boolean validateForm() {
+        boolean valid = true;
+
+        String email = fragmentLoginEmailBinding.textEditGetMail.getText().toString();
+        if (TextUtils.isEmpty(email)) {
+            fragmentLoginEmailBinding.textEditGetMail.setError("Required.");
+            valid = false;
+        } else {
+            fragmentLoginEmailBinding.textEditGetMail.setError(null);
+        }
+
+        String password = fragmentLoginEmailBinding.textEditGetPassword.getText().toString();
+        if (TextUtils.isEmpty(password)) {
+            fragmentLoginEmailBinding.textEditGetPassword.setError("Required.");
+            valid = false;
+        } else {
+            fragmentLoginEmailBinding.textEditGetPassword.setError(null);
+        }
+
+        return valid;
+    }
+
+    private void updateUI(FirebaseUser user) {
+
+    }
+
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        fragmentLoginEmailBinding = null;
     }
 }

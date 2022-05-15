@@ -58,7 +58,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrarionCompletedFragment"
-        android:name="com.example.insense.RegistrarionCompletedFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.RegistrarionCompletedFragment"
         android:label="fragment_registrarion_completed"
         tools:layout="@layout/fragment_registrarion_completed" >
         <action
@@ -67,7 +67,7 @@
     </fragment>
     <fragment
         android:id="@+id/loadingFragment"
-        android:name="com.example.insense.LoadingFragment"
+        android:name="com.example.insense.ui.authentication.authentication.Login.LoadingFragment"
         android:label="fragment_loading"
         tools:layout="@layout/fragment_loading" />
 </navigation>
