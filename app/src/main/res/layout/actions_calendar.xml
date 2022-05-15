@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
 
+    android:layout_marginTop="40dp"
+
     android:layout_height="wrap_content">
 
     <TextView
@@ -13,7 +15,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:text="TextView"
-        android:textColor="#29E1CD"
+        android:background="@drawable/layout_bg"
+        android:textColor="#0B1637"
         android:textSize="23dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

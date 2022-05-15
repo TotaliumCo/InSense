@@ -154,7 +154,7 @@ public class CalendarFragment extends Fragment {
                     String str = all.get(i).startDate.getHour() + ":" + all.get(i).startDate.getMinute() + " - " + all.get(i).endDate.getHour() + ":" + all.get(i).endDate.getMinute();
 
 
-                    textView_name_of_activity.setText(dayContainerModel.getEvent().getEventText());
+                    textView_name_of_activity.setText(" " +dayContainerModel.getEvent().getEventText() + " ");
                     textView_description_of_activity.setText("Описание: " + all.get(i).description);
                     textView_name_of_occupation.setText( "Занятие: " + all.get(i).occupation);
                     textView_time_start_end.setText("Время: " + str);

@@ -97,11 +97,11 @@
 
         <ScrollView
             android:id="@+id/scroll_calendar_event"
-            android:layout_width="380dp"
-            android:layout_height="345dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="360dp"
+            android:layout_height="340dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="15dp"
             app:layout_constraintBottom_toTopOf="@+id/button_calendar_main"
             app:layout_constraintEnd_toEndOf="parent"
