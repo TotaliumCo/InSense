@@ -50,7 +50,7 @@ public class CategoryRepository {
 
         CategoryDB db =  Room.databaseBuilder(context,
                 CategoryDB.class, "database").fallbackToDestructiveMigration().allowMainThreadQueries().build();
-        categoryDAO = db.user_categ();
+        categoryDAO = db.categoryDAO();
         categoryDAO.insertAll(categories);
 
     }
