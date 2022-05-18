@@ -111,7 +111,7 @@ public class CalendarFragment extends Fragment {
 
 
             ScrollView scrollView = container.findViewById(R.id.scroll_calendar_event);
-            LinearLayout layout = (LinearLayout) container.findViewById(R.id.layout_all_activities_in_one_day);
+            LinearLayout layout =  container.findViewById(R.id.layout_all_activities_in_one_day);
             layout.removeAllViews();
             for(int i = 0; i < all.size(); i++) {
                 ZoneId zoneId = ZoneId.of("Europe/Moscow");
@@ -152,13 +152,9 @@ public class CalendarFragment extends Fragment {
 
                 }
             }
-
-
         });
-
         return fragmentCalendarBinding.getRoot();
     }
-
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
