@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -36,6 +38,7 @@ public class LoginEmailFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
     private static final String TAG = "AUTH";
     private FirebaseAuth mAuth;
+    private int count = 0;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -137,8 +140,18 @@ public class LoginEmailFragment extends Fragment {
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            count++;
                             Toast.makeText(getContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
+                            if(count == 3){
+                                fragmentLoginEmailBinding.emailSignInButton.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        NavController navController = NavHostFragment.findNavController(LoginEmailFragment.this);
+                                        navController.navigate(R.id.action_loginEmailFragment_to_forgotPasswordFragment);
+                                    }
+                                });
+                            }
                             updateUI(null);
                         }
 

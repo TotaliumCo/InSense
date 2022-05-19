@@ -27,9 +27,10 @@
             app:off_month_day_color="#8F77F3"
             app:selected_day_text_color="#0F0635"
             app:selector_color="#29E1CD"
-            app:week_name_color="@color/white">
 
-        </com.skyhope.eventcalenderlibrary.CalenderEvent>
+            app:week_name_color="@color/white" />
+
+
 
         <ScrollView
             android:id="@+id/scroll_calendar_event"
