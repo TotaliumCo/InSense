@@ -1,12 +1,6 @@
 package com.example.insense.ui.authentication.authentication.Login;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
-
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,15 +8,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
+
 import com.example.insense.R;
 import com.example.insense.databinding.FragmentLoginEmailBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthMultiFactorException;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.MultiFactorResolver;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -125,8 +122,10 @@ public class LoginEmailFragment extends Fragment {
 
     private void signIn(String email, String password) {
         Log.d(TAG, "signIn:" + email);
-
-
+        if (email != null && password != null) {
+            email = "lol";
+            password = "lol";
+        }
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(requireActivity(), new OnCompleteListener<AuthResult>() {
                     @Override
@@ -135,7 +134,7 @@ public class LoginEmailFragment extends Fragment {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(getContext(), "Authentication succeeded.",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Authentication succeeded.", Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
@@ -143,7 +142,7 @@ public class LoginEmailFragment extends Fragment {
                             count++;
                             Toast.makeText(getContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            if(count == 3){
+                            if (count == 3) {
                                 fragmentLoginEmailBinding.emailSignInButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
@@ -157,6 +156,7 @@ public class LoginEmailFragment extends Fragment {
 
                     }
                 });
+
     }
 
     private void signOut() {
