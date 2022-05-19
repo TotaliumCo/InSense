@@ -126,4 +126,7 @@ public class OccupationRepository {
         return all_descrigt;
     }
 
+    public OccupationDAO getOccupationDAO() {
+        return occupationDAO;
+    }
 }

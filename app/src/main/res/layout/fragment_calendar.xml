@@ -1,55 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#0F0635"
-    tools:context=".ui.fragments.Calendar.CalendarFragment">
-
+    tools:context=".ui.tabs.calendar.CalendarFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
         <com.skyhope.eventcalenderlibrary.CalenderEvent
             android:id="@+id/calender_event"
-            android:layout_width="423dp"
-            android:layout_height="252dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
 
             app:calender_background="#0F0635"
             app:current_month_day_color="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/scroll_calendar_event"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:month_color="@color/white"
             app:off_month_day_color="#8F77F3"
-
-            app:selected_day_text_color="@color/backgr"
+            app:selected_day_text_color="#0F0635"
             app:selector_color="#29E1CD"
+
             app:week_name_color="@color/white" />
+
 
 
         <ScrollView
             android:id="@+id/scroll_calendar_event"
-            android:layout_width="380dp"
-            android:layout_height="345dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/calender_event">
+            app:layout_constraintTop_toBottomOf="@+id/calender_event"
+            tools:ignore="SpeakableTextPresentCheck">
 
             <LinearLayout
                 android:id="@+id/layout_all_activities_in_one_day"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical" />
         </ScrollView>
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </layout>
