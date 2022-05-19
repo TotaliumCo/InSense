@@ -22,6 +22,8 @@ public interface OccupationDAO {
 
     @Insert
     void insertAll(List<Occupation> occupations);
+    @Insert
+    void insert(Occupation occupation);
     @Update
     void updateOccupation(Occupation occupation);
     @Delete
