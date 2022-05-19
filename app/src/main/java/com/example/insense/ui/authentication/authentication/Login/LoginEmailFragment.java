@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.text.TextUtils;
@@ -146,8 +147,8 @@ public class LoginEmailFragment extends Fragment {
                                 fragmentLoginEmailBinding.emailSignInButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        NavHostFragment.findNavController(LoginEmailFragment.this).navigate(R.id.forgotPasswordFragment);
-                                        return;
+                                        NavController navController = NavHostFragment.findNavController(LoginEmailFragment.this);
+                                        navController.navigate(R.id.action_loginEmailFragment_to_forgotPasswordFragment);
                                     }
                                 });
                             }

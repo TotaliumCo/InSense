@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.fragment.NavHostFragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -45,7 +47,7 @@ public class ForgotPasswordFragment extends Fragment {
         fragmentForgotPasswordBinding = FragmentForgotPasswordBinding.inflate(inflater, container, false);
         auth = FirebaseAuth.getInstance();
         Log.d("RRRRR", "щщщ");
-        fragmentForgotPasswordBinding.emailChange.setOnClickListener(new View.OnClickListener() {
+        fragmentForgotPasswordBinding.change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.d("RRRRR", "LOL00");
@@ -57,6 +59,8 @@ public class ForgotPasswordFragment extends Fragment {
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
                                 Toast.makeText(getContext(), "We have sent you instructions to reset your password!", Toast.LENGTH_SHORT).show();
+                                NavController navController = NavHostFragment.findNavController(ForgotPasswordFragment.this);
+                                navController.navigate(R.id.action_forgotPasswordFragment_to_loginEmailFragment);
                             } else {
                                 Toast.makeText(getContext(), "Failed to send reset email!", Toast.LENGTH_SHORT).show();
                             }
@@ -65,7 +69,7 @@ public class ForgotPasswordFragment extends Fragment {
                 });
             }
         });
-        return inflater.inflate(R.layout.fragment_forgot_password, container, false);
+        return fragmentForgotPasswordBinding.getRoot();
     }
 
 }

@@ -46,6 +46,9 @@
         <action
             android:id="@+id/action_forgotPasswordFragment_to_codeReceivedFragment"
             app:destination="@id/codeReceivedFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginEmailFragment"
+            app:destination="@id/loginEmailFragment" />
     </fragment>
     <fragment
         android:id="@+id/codeReceivedFragment"

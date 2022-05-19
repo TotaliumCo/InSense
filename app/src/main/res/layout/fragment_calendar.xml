@@ -18,10 +18,8 @@
             android:layout_height="252dp"
             android:layout_marginTop="10dp"
 
-            android:layout_marginBottom="350dp"
             app:calender_background="#0F0635"
             app:current_month_day_color="@color/white"
-            app:layout_constraintBottom_toTopOf="@+id/button_calendar_profile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -33,59 +31,6 @@
             app:week_name_color="@color/white" />
 
 
-        <ImageButton
-            android:id="@+id/button_calendar_main"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_home"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-        <ImageButton
-            android:id="@+id/button_calendar_profile"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_profile"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button_calendar_main" />
-
-        <ImageButton
-            android:id="@+id/button_calendar_calendar"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_calendar"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button_calendar_categories" />
-
-        <ImageButton
-            android:id="@+id/button_calendar_categories"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="#29E1CD"
-            android:scaleType="centerCrop"
-            android:src="@drawable/button_action"
-            android:textColor="#0B1637"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
         <ScrollView
             android:id="@+id/scroll_calendar_event"
             android:layout_width="380dp"
@@ -93,8 +38,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="15dp"
-            app:layout_constraintBottom_toTopOf="@+id/button_calendar_main"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/calender_event">
