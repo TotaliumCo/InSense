@@ -8,29 +8,22 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/button_add"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentBottom="true"
-                android:layout_marginEnd="51dp"
-                android:layout_marginBottom="87dp"
-                android:background="@drawable/img" />
-        </RelativeLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/button_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
         <ImageButton
             android:id="@+id/button_back_category"
             android:layout_width="80dp"
             android:layout_height="60dp"
-
+            android:visibility="gone"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:backgroundTint="#29E1CD"
@@ -41,12 +34,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
+
         <ExpandableListView
             android:id="@+id/expListView"
             android:layout_width="345dp"
             android:layout_height="490dp"
             android:layout_marginStart="25dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
 
 
@@ -54,9 +48,7 @@
             android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView_category">
-
-        </ExpandableListView>
+            app:layout_constraintTop_toBottomOf="@+id/textView_category" />
         <TextView
             android:id="@+id/textView_category"
             android:layout_width="wrap_content"
@@ -65,11 +57,12 @@
             android:layout_marginTop="21dp"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="30dp"
-            android:text="Активности"
+            android:text=""
             android:textColor="#29E1CD"
-            android:textSize="35dp"
+            android:textSize="35sp"
             app:layout_constraintBottom_toTopOf="@+id/expListView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

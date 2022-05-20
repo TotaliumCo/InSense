@@ -138,9 +138,9 @@ public class CalendarFragment extends Fragment {
 
 
                     textView_name_of_activity.setText(dayContainerModel.getEvent().getEventText());
-                    textView_description_of_activity.setText("Описание: " + all.get(i).description);
-                    textView_name_of_occupation.setText( "Занятие: " + all.get(i).occupation);
-                    textView_time_start_end.setText("Время: " + str);
+                    textView_description_of_activity.setText(getString(R.string.calendar_description, all.get(i).description));
+                    textView_name_of_occupation.setText( getString(R.string.calendar_occupation, all.get(i).occupation));
+                    textView_time_start_end.setText(getString(R.string.calendar_time,  str));
 
 
                     layout.addView(view1);

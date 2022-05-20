@@ -34,7 +34,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="СПОРТ"
+                    android:text="@string/categories_SPORT"
                     android:textColor="@color/black" />
 
                 <Button
@@ -43,7 +43,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="МУЗЫКА"
+                    android:text="@string/categories_MUSIC"
                     android:textColor="@color/black" />
 
                 <Button
@@ -52,7 +52,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="УЧЕБА"
+                    android:text="@string/categories_STUDY"
                     android:textColor="@color/black" />
 
                 <Button
@@ -61,7 +61,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="РАБОТА"
+                    android:text="@string/categories_WORK"
                     android:textColor="@color/black" />
 
                 <Button
@@ -70,7 +70,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="ХОББИ"
+                    android:text="@string/categories_HOBBY"
                     android:textColor="@color/black" />
 
                 <Button
@@ -79,7 +79,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="СЕМЬЯ"
+                    android:text="@string/categories_FAMILY"
                     android:textColor="@color/black" />
 
                 <Button
@@ -88,7 +88,7 @@
                     android:layout_height="60dp"
                     android:layout_marginTop="10dp"
                     android:backgroundTint="#29E1CD"
-                    android:text="ДРУГОЕ"
+                    android:text="@string/categories_OTHER"
                     android:textColor="@color/black" />
 
             </LinearLayout>
