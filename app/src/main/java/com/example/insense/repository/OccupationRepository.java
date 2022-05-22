@@ -94,6 +94,17 @@ public class OccupationRepository {
         occupationDAO.insertAll(occupationList);
     }
 
+    public List<String> get_everything_from_occupations(){
+        List<Occupation> all;
+
+        all = occupationDAO.getAllOccupation();
+        List<String> all_occup = new ArrayList<>();
+        for (int i = 0; i < all.size(); i++) {
+            all_occup.add(all.get(i).category);
+        }
+        return all_occup;
+    }
+
     public List<String> get_all_occupations(String categ){
         List<Occupation> all;
 

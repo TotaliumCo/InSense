@@ -42,7 +42,7 @@ public class ActivityRepository {
         learn_new_song.occupation = "Игра на пианино";
         learn_new_song.color =
                 new ColorCanvas(255,200,140 ,89);
-        LocalDateTime date_end = LocalDateTime.of(2022, 6, 10, 12, 30, 24);
+        LocalDateTime date_end = LocalDateTime.of(2022, 6, 10, 13, 30, 24);
 
         ZoneId zoneId = ZoneId.of("Europe/Moscow");
         ZonedDateTime zdt = ZonedDateTime.of(date_end, zoneId);
@@ -50,7 +50,7 @@ public class ActivityRepository {
 
         learn_new_song.endDate = date_end;
 
-        LocalDateTime date_start = LocalDateTime.of(2022, 6, 10, 13, 30, 24);
+        LocalDateTime date_start = LocalDateTime.of(2022, 6, 10, 12, 30, 24);
         learn_new_song.startDate = date_start;
         activities.add(learn_new_song);
 
@@ -61,9 +61,9 @@ public class ActivityRepository {
         repeat_learned_songs.occupation = "Игра на пианино";
         repeat_learned_songs.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 6, 10, 13, 30, 24);
+        date_end = LocalDateTime.of(2022, 6, 10, 14, 30, 24);
         repeat_learned_songs.endDate =date_end;
-        date_start = LocalDateTime.of(2022, 6, 10, 14, 30, 24);
+        date_start = LocalDateTime.of(2022, 6, 10, 13, 30, 24);
         repeat_learned_songs.startDate = date_start;
         activities.add(repeat_learned_songs);
 
@@ -73,7 +73,7 @@ public class ActivityRepository {
         make_tune.occupation = "Игра на пианино";
         make_tune.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 5, 1, 12, 30, 24);
+        date_end = LocalDateTime.of(2022, 5, 1, 12, 50, 24);
         make_tune.endDate =date_end;
         date_start = LocalDateTime.of(2022, 7, 10, 12, 30, 24);
         make_tune.startDate = date_start;
@@ -86,9 +86,9 @@ public class ActivityRepository {
         draw_sketches.occupation = "Рисование";
         draw_sketches.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 5, 1, 15, 30, 24);
+        date_end = LocalDateTime.of(2022, 5, 1, 16, 30, 24);
         draw_sketches.endDate =date_end;
-        date_start = LocalDateTime.of(2022, 7, 10, 16, 30, 24);
+        date_start = LocalDateTime.of(2022, 7, 10, 15, 30, 24);
         draw_sketches.startDate = date_start;
         activities.add(draw_sketches);
 
@@ -99,7 +99,7 @@ public class ActivityRepository {
         draw_portraits.occupation = "Рисование";
         draw_portraits.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 6, 10, 11, 30, 24);
+        date_end = LocalDateTime.of(2022, 6, 10, 15, 30, 24);
         draw_portraits.endDate =date_end;
         date_start = LocalDateTime.of(2022, 7, 10, 12, 30, 24);
         draw_portraits.startDate = date_start;
@@ -112,7 +112,7 @@ public class ActivityRepository {
         learn_drawing_techniques.occupation = "Рисование";
         learn_drawing_techniques.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 6, 10, 9, 30, 24);
+        date_end = LocalDateTime.of(2022, 6, 10, 14, 30, 24);
         learn_drawing_techniques.endDate =date_end;
         date_start = LocalDateTime.of(2022, 7, 10, 12, 30, 24);
         learn_drawing_techniques.startDate = date_start;
@@ -125,7 +125,7 @@ public class ActivityRepository {
         read_articles.occupation = "Чтение";
         read_articles.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 6, 10, 9, 30, 24);
+        date_end = LocalDateTime.of(2022, 6, 10, 17, 30, 24);
         read_articles.endDate =date_end;
         date_start = LocalDateTime.of(2022, 7, 10, 12, 30, 24);
         read_articles.startDate = date_start;
@@ -138,9 +138,9 @@ public class ActivityRepository {
         read_fiction.occupation = "Чтение";
         read_fiction.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 6, 10, 9, 30, 24);
+        date_end = LocalDateTime.of(2022, 6, 10, 18, 30, 24);
         read_fiction.endDate =date_end;
-        date_start = LocalDateTime.of(2022, 7, 10, 12, 30, 24);
+        date_start = LocalDateTime.of(2022, 7, 10, 17, 30, 24);
         read_fiction.startDate = date_start;
         activities.add(read_fiction);
 
@@ -151,9 +151,9 @@ public class ActivityRepository {
         read_nonfiction.occupation = "Чтение";
         read_nonfiction.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 5, 10, 9, 30, 24);
+        date_end = LocalDateTime.of(2022, 5, 10, 20, 30, 24);
         read_nonfiction.endDate =date_end;
-        date_start = LocalDateTime.of(2022, 7, 10, 12, 30, 24);
+        date_start = LocalDateTime.of(2022, 7, 10, 23, 35, 24);
         read_nonfiction.startDate = date_start;
         activities.add(read_nonfiction);
 
