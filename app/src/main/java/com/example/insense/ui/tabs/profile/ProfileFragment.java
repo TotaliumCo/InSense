@@ -102,7 +102,7 @@ public class ProfileFragment extends Fragment {
         fragmentProfileBinding.buttonToSettings2.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
         });
-        fragmentProfileBinding.buttonToSettings.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_settingsFragment2));
+
         return fragmentProfileBinding.getRoot();
     }
 

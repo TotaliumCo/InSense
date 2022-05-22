@@ -25,43 +25,19 @@
         <action
             android:id="@+id/action_loginEmailFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
-        <action
-            android:id="@+id/action_loginEmailFragment_to_loadingFragment"
-            app:destination="@id/loadingFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginGoogleFragment"
         android:name="com.example.insense.ui.authentication.authentication.Login.LoginGoogleFragment"
         android:label="fragment_login_google"
-        tools:layout="@layout/fragment_login_google" >
-        <action
-            android:id="@+id/action_loginGoogleFragment_to_loadingFragment"
-            app:destination="@id/loadingFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_login_google" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.insense.ui.authentication.authentication.Login.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" >
         <action
-            android:id="@+id/action_forgotPasswordFragment_to_codeReceivedFragment"
-            app:destination="@id/codeReceivedFragment" />
-        <action
             android:id="@+id/action_forgotPasswordFragment_to_loginEmailFragment"
             app:destination="@id/loginEmailFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/codeReceivedFragment"
-        android:name="com.example.insense.ui.authentication.authentication.Login.CodeReceivedFragment"
-        android:label="fragment_code_received"
-        tools:layout="@layout/fragment_code_received" >
-        <action
-            android:id="@+id/action_codeReceivedFragment_to_loadingFragment"
-            app:destination="@id/loadingFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/loadingFragment"
-        android:name="com.example.insense.ui.authentication.authentication.Login.LoadingFragment"
-        android:label="fragment_loading"
-        tools:layout="@layout/fragment_loading" />
 </navigation>
