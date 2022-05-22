@@ -144,6 +144,19 @@ public class ActivityRepository {
         read_fiction.startDate = date_start;
         activities.add(read_fiction);
 
+        Activity exercises = new Activity();
+        exercises.name = "Упражнения для спины";
+        exercises.description = "lol";
+        exercises.occupation = "Разминка";
+        exercises.color =
+                new ColorCanvas(255,200,140 ,89);
+        date_end = LocalDateTime.of(2022, 6, 11, 18, 30, 24);
+        exercises.endDate =date_end;
+        date_start = LocalDateTime.of(2022, 7, 11, 17, 30, 24);
+        exercises.startDate = date_start;
+        activities.add(exercises);
+
+
 
         Activity read_nonfiction = new Activity();
         read_nonfiction.name = "Читать научную литературу";
