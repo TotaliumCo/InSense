@@ -73,7 +73,7 @@ public class CategoryFragment extends Fragment {
         /*        expListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
-            public void onGroupExpand(int groupPosition) {
+            public void onGropExpand(int groupPosition) {
                 Toast.makeText(getActivity().getApplicationContext(),
                         expListTitle.get(groupPosition) + " Список раскрыт.",
                         Toast.LENGTH_SHORT).show();
