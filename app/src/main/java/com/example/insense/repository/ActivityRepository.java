@@ -69,7 +69,7 @@ public class ActivityRepository {
 
         Activity make_tune = new Activity();
         make_tune.name = "Придумывать мелодию";
-        make_tune.description = "lol";
+        make_tune.description = "по видеоурокам";
         make_tune.occupation = "Игра на пианино";
         make_tune.color =
                 new ColorCanvas(255,200,140 ,89);
@@ -82,7 +82,7 @@ public class ActivityRepository {
 //РИСОВАНИЕ
         Activity draw_sketches = new Activity();
         draw_sketches.name = "Рисовать скетчи";
-        draw_sketches.description = "lol";
+        draw_sketches.description = "занятие с учителем";
         draw_sketches.occupation = "Рисование";
         draw_sketches.color =
                 new ColorCanvas(255,200,140 ,89);
