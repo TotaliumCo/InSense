@@ -15,8 +15,8 @@
         android:id="@+id/Name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text=""
         android:layout_margin="10dp"
         android:textColor="@color/black"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 </LinearLayout>
