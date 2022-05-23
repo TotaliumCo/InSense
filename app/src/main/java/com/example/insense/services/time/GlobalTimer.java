@@ -62,7 +62,7 @@ public class GlobalTimer {
 
         ZonedDateTime zdt_start = ZonedDateTime.of(activity.startDate, zoneId);
         long millis_start = zdt_start.toInstant().toEpochMilli();
-        mLeftTimeInMillis = (int) (-millis_end + millis_start);
+        mLeftTimeInMillis = (int) (millis_end - millis_start);
         startTime = mLeftTimeInMillis;
     }
 
@@ -86,4 +86,5 @@ public class GlobalTimer {
         return mIsTimerRunning;
     }
 
+    public Activity getmActivity() { return mActivity; }
 }

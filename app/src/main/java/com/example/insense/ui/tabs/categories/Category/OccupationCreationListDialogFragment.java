@@ -33,6 +33,7 @@ public class OccupationCreationListDialogFragment extends BottomSheetDialogFragm
     // TODO: Customize parameter argument names
     private static final String ARG_ITEM_COUNT = "item_count";
     private FragmentItemListDialogListDialogBinding binding;
+
     public String category;
     public OccupationCreationListDialogFragment(String category){
         this.category = category;

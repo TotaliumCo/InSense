@@ -15,36 +15,37 @@
             android:id="@+id/button_about_action"
             android:layout_width="371dp"
             android:layout_height="86dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:backgroundTint="#29E1CD"
             android:text="@string/about_action"
             android:textColor="#0B1637"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView_from_user" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/clock_fragment"
             android:layout_width="341dp"
-            android:layout_height="343dp"
+            android:layout_height="341dp"
             android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="80dp"
-            android:layout_marginBottom="220dp"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_about_action"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.039" />
 
-        <TextView
-            android:id="@+id/textView_from_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/activities_of_the_curr_day"
+            android:layout_width="396dp"
+            android:layout_height="194dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/clock_fragment" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

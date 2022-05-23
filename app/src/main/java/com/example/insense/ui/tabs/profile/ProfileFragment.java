@@ -4,12 +4,10 @@ import android.os.Bundle;
 
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.insense.R;
 import com.example.insense.application.App;
@@ -20,7 +18,6 @@ import com.example.insense.repository.room.activityDB.Activity;
 import com.example.insense.repository.room.occupationDB.Occupation;
 import com.example.insense.repository.room.occupationDB.OccupationDAO;
 import com.example.insense.ui.authentication.authentication.Login.LoginViewModel;
-import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -32,10 +29,11 @@ public class ProfileFragment extends Fragment {
     LoginViewModel viewModel = new LoginViewModel();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     ActivityRepository repository_activity = App.instance.getActivityRepository();
+    OccupationRepository repository_occupation = App.instance.getOccupationRepository();
     List<Activity> all;
 
     OccupationRepository occupationRepository = App.instance.getOccupationRepository();
-    List<String> all_occup;
+    List<Occupation> all_occup;
     OccupationDAO occupationDAO;
 
 
@@ -58,6 +56,8 @@ public class ProfileFragment extends Fragment {
         all = repository_activity.all_activities();
         fragmentProfileBinding.texViewNumberOfActivities.setText( "" +all.size());
         all_occup = occupationRepository.get_everything_from_occupations();
+
+
         int count_sport = 0;
         int count_music = 0;
         int count_study = 0;
@@ -66,28 +66,32 @@ public class ProfileFragment extends Fragment {
         int count_family = 0;
         int count_other = 0;
         for(int i = 0; i < all_occup.size(); i++){
-            switch (all_occup.get(i)){
-                case "спорт":
-                    count_sport++;
-                    break;
-                case "музыка":
-                    count_music++;
-                    break;
-                case "учеба":
-                    count_study++;
-                    break;
-                case "работа":
-                    count_work++;
-                    break;
-                case "хобби":
-                    count_hobby++;
-                    break;
-                case "семья":
-                    count_family++;
-                    break;
-                case "другое":
-                    count_other++;
-                    break;
+            for(int j = 0; j < all.size(); j++) {
+                if(all.get(j).occupation.equals(all_occup.get(i).name)) {
+                    switch (all_occup.get(i).category) {
+                        case "спорт":
+                            count_sport++;
+                            break;
+                        case "музыка":
+                            count_music++;
+                            break;
+                        case "учеба":
+                            count_study++;
+                            break;
+                        case "работа":
+                            count_work++;
+                            break;
+                        case "хобби":
+                            count_hobby++;
+                            break;
+                        case "семья":
+                            count_family++;
+                            break;
+                        case "другое":
+                            count_other++;
+                            break;
+                    }
+                }
             }
 
         }
@@ -102,7 +106,7 @@ public class ProfileFragment extends Fragment {
         fragmentProfileBinding.buttonToSettings2.setOnClickListener(v -> {
             FirebaseAuth.getInstance().signOut();
         });
-        fragmentProfileBinding.buttonToSettings.setOnClickListener(v -> NavHostFragment.findNavController(ProfileFragment.this).navigate(R.id.action_profileFragment_to_settingsFragment2));
+
         return fragmentProfileBinding.getRoot();
     }
 
