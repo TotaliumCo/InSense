@@ -9,7 +9,7 @@ import com.example.insense.repository.room.activityDB.ActivityConverters;
 import com.example.insense.repository.room.activityDB.ActivityDAO;
 
 
-@Database(entities = {Activity.class},version = 18, exportSchema = false)
+@Database(entities = {Activity.class},version = 20, exportSchema = false)
 @TypeConverters({ActivityConverters.class})
 public abstract class ActivityDB extends RoomDatabase {
     public abstract ActivityDAO userDao();

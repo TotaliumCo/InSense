@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 
@@ -18,26 +19,26 @@ import com.example.insense.ui.tabs.main.Clocks.Parts.Timer;
 
 public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
     private DrawThread drawThread;
-    public DrawView(Context context){
+
+    public DrawView(Context context) {
         super(context);
         getHolder().addCallback(this);
     }
 
 
-
     @Override
     public void surfaceCreated(@NonNull SurfaceHolder surfaceHolder) {
-        drawThread = new DrawThread(getContext(),getHolder());
+        drawThread = new DrawThread(getContext(), getHolder());
         drawThread.start();
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(App.getInstance().getGlobalTimer().getIsTimer()){
-            if (App.getInstance().getGlobalTimer().getIsTimerRunning()){
+        if (App.getInstance().getGlobalTimer().getIsTimer()) {
+            if (App.getInstance().getGlobalTimer().getIsTimerRunning()) {
                 App.getInstance().getGlobalTimer().stopTimer();
                 Log.i("TIMER", "STOPPED");
-            }else{
+            } else {
                 App.getInstance().getGlobalTimer().startTimer();
                 Log.i("TIMER", "Started");
             }
@@ -57,14 +58,11 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
     }
 
 
-
-
-
 }
+
 class DrawThread extends Thread {
 
     private SurfaceHolder surfaceHolder;
-
 
 
     private volatile boolean running = true;//флаг для остановки потока
@@ -87,10 +85,11 @@ class DrawThread extends Thread {
             Timer timer = new Timer();
             if (canvas != null) {
                 try {
-                    if(App.getInstance().getGlobalTimer().getIsTimer()){
+                    if (App.getInstance().getGlobalTimer().getIsTimer()) {
                         timer.print(canvas);
-                    }else{
-                    clock24.print(canvas);}
+                    } else {
+                        clock24.print(canvas);
+                    }
                 } finally {
                     surfaceHolder.unlockCanvasAndPost(canvas);
                 }

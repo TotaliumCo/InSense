@@ -150,9 +150,9 @@ public class ActivityRepository {
         exercises.occupation = "Разминка";
         exercises.color =
                 new ColorCanvas(255,200,140 ,89);
-        date_end = LocalDateTime.of(2022, 6, 11, 18, 30, 24);
+        date_end = LocalDateTime.of(2022, 5, 23, 18, 30, 24);
         exercises.endDate =date_end;
-        date_start = LocalDateTime.of(2022, 7, 11, 17, 30, 24);
+        date_start = LocalDateTime.of(2022, 5, 23, 17, 30, 24);
         exercises.startDate = date_start;
         activities.add(exercises);
 

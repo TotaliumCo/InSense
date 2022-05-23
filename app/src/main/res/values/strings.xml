@@ -4,7 +4,8 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="mail_text">Mail</string>
     <string name="google_text">Google</string>
-    <string name="proceed">продолжить</string>
+    <string name="backgo">Вернутся</string>
+    <string name="save_activity">Утвердить</string>
     <string name="categories_SPORT">СПОРТ</string>
     <string name="categories_MUSIC">МУЗЫКА</string>
     <string name="categories_STUDY">УЧЕБА</string>

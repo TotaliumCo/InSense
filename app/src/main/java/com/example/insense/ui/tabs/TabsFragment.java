@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.NavDestination;
 import androidx.navigation.NavOptions;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.NavigationUI;
@@ -44,6 +45,13 @@ public class TabsFragment extends Fragment {
         NavHostFragment navHostFragment = (NavHostFragment) getChildFragmentManager().findFragmentById(R.id.tabsContainer);
         assert navHostFragment != null;
         NavController navController = navHostFragment.getNavController();
+        navController.addOnDestinationChangedListener((navController1, navDestination, bundle) -> {
+            if(navDestination.getId() == R.id.activityFragment){
+                fragmentTabsBinding.bottomNavigationView.setVisibility(View.GONE);
+            }else{
+                fragmentTabsBinding.bottomNavigationView.setVisibility(View.VISIBLE);
+            }
+        });
 
         NavigationUI.setupWithNavController(fragmentTabsBinding.bottomNavigationView, navController);
         return fragmentTabsBinding.getRoot();
