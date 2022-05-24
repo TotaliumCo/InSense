@@ -12,7 +12,6 @@
             android:id="@+id/activity_name_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             app:layout_constraintBottom_toTopOf="@+id/name_of_occupation_layout"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -57,40 +56,52 @@
             android:id="@+id/StartTimeButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="317dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
             android:layout_marginEnd="76dp"
             android:text="Выберите время начала действия"
             app:layout_constraintBottom_toTopOf="@+id/EndTimeButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/activity_description_layout" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/EndTimeButton"
             style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="306dp"
-            android:layout_height="48dp"
+            android:layout_width="315dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="4dp"
             android:text="Выберите время конца действия"
-            app:layout_constraintBottom_toTopOf="@+id/save_activity"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/StartTimeButton" />
 
         <Button
-            android:id="@+id/save_activity"
+            android:id="@+id/delete_activity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="удалить"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.905" />
+
+        <Button
+            android:id="@+id/save_activity2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save_activity"
             android:textColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.887"
+            app:layout_constraintHorizontal_bias="0.944"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.973" />
+            app:layout_constraintVertical_bias="0.905" />
 
         <Button
             android:id="@+id/button_back_whatewher"
@@ -100,10 +111,10 @@
             android:textColor="#070505"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.059"
+            app:layout_constraintHorizontal_bias="0.053"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.973" />
+            app:layout_constraintVertical_bias="0.905" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
