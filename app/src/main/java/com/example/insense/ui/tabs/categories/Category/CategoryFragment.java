@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.insense.R;
@@ -25,6 +27,7 @@ import com.example.insense.repository.room.activityDB.Activity;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Objects;
 
 
 public class CategoryFragment extends Fragment {
@@ -67,41 +70,8 @@ public class CategoryFragment extends Fragment {
         expListTitle = new ArrayList<>(map_of_occupations_activities.keySet());
         expListView = (ExpandableListView) view.findViewById(R.id.expListView);
         all_occupations = repository_occupation.occupation_by_category(text);
-        expListAdapter = new ListAdapter(getContext(), context_activity, all_occupations, map_of_occupations_activities, CategoryFragment.this);
+        expListAdapter = new ListAdapter(getContext(), context_activity, all_occupations, NavHostFragment.findNavController(this),map_of_occupations_activities, CategoryFragment.this);
         expListView.setAdapter(expListAdapter);
-
-        /*        expListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
-
-            @Override
-            public void onGropExpand(int groupPosition) {
-                Toast.makeText(getActivity().getApplicationContext(),
-                        expListTitle.get(groupPosition) + " Список раскрыт.",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-        expListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
-
-            @Override
-            public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getActivity().getApplicationContext(),
-                        expListTitle.get(groupPosition) + " Список скрыт.",
-                        Toast.LENGTH_SHORT).show();
-
-            }
-        });*/
-       /* expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
-            @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
-                Toast.makeText(getActivity().getApplicationContext(),
-                        expListTitle.get(groupPosition)
-                                + " : " + map_of_occupations_activities.get(expListTitle.get(groupPosition))
-                                .get(childPosition), Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        });*/
-
-
     }
 }
 

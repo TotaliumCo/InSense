@@ -15,24 +15,24 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_marginEnd="10dp"
-            app:srcCompat="@drawable/plus"
             android:layout_marginBottom="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-             />
+            app:srcCompat="@drawable/plus"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <ImageButton
             android:id="@+id/button_back_category"
             android:layout_width="80dp"
             android:layout_height="60dp"
-            android:visibility="gone"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
             android:backgroundTint="#29E1CD"
+
             android:scaleType="centerCrop"
             android:src="@drawable/button_back"
-
             android:textColor="#0B1637"
+            android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -45,12 +45,13 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="25dp"
 
-
+            android:cacheColorHint="@color/white"
             android:childDivider="#AEC5FFF3"
             android:indicatorLeft="?android:attr/expandableListPreferredItemIndicatorLeft"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView_category" />
+
         <TextView
             android:id="@+id/textView_category"
             android:layout_width="wrap_content"

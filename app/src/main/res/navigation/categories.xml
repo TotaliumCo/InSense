@@ -18,5 +18,13 @@
         android:id="@+id/categoryFragment"
         android:name="com.example.insense.ui.tabs.categories.Category.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" />
+        tools:layout="@layout/fragment_category" >
+        <action
+            android:id="@+id/action_categoryFragment_to_activityFragment2"
+            app:destination="@id/activityFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/activityFragment2"
+        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.Activity.ActivityFragment"
+        android:label="ActivityFragment" />
 </navigation>
