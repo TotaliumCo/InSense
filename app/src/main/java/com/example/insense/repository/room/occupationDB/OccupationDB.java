@@ -17,11 +17,9 @@ public abstract class OccupationDB extends RoomDatabase {
     public static OccupationDB getOccupationDB(final Context context) {
         if (occupationDB == null) {
             synchronized (OccupationDB.class) {
-                occupationDB = Room.databaseBuilder(context, OccupationDB.class, "DATABASE")
+                occupationDB = Room.databaseBuilder(context, OccupationDB.class, "DAT_ABASE")
                         .fallbackToDestructiveMigration().allowMainThreadQueries().build();
             }
-        } else {
-
         }
         return occupationDB;
     }
