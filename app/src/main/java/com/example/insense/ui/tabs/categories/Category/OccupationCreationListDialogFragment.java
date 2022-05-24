@@ -47,10 +47,10 @@ public class OccupationCreationListDialogFragment extends BottomSheetDialogFragm
         binding.textView4.setOnClickListener(view -> {
             Occupation occupation = new Occupation();
             occupation.name = binding.textView.getText().toString();
-            occupation.description = binding.textView2.getText().toString();
             occupation.category = category;
             App.instance.getOccupationRepository().getOccupationDAO().insert(occupation);
             App.instance.getOccupationRepository().getOccupationDAO().updateOccupation(occupation);
+            this.dismiss();
         });
         return binding.getRoot();
     }

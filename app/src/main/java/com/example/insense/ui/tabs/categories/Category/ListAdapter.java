@@ -122,7 +122,7 @@ public class ListAdapter extends BaseExpandableListAdapter {
             if (one_activity.equals("add")) {
                 bundle.putString("occupation",list_of_occupations.get(listPosition));
             } else {
-                bundle.putString("uid", String.valueOf(App.getInstance().getActivityRepository().getDatabase().userDao().loadByName(one_activity).uid));
+                bundle.putString("uid", String.valueOf(App.getInstance().getActivityRepository().getDatabase().activityDao().loadByName(one_activity).uid));
             }
 
             navController.navigate(R.id.action_categoryFragment_to_activityFragment2, bundle);

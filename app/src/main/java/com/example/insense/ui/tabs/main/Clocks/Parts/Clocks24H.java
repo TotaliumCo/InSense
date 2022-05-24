@@ -8,17 +8,14 @@ import android.util.Log;
 import androidx.annotation.RequiresApi;
 
 import com.example.insense.application.App;
-import com.example.insense.models.Date;
 import com.example.insense.repository.ActivityRepository;
 import com.example.insense.repository.room.activityDB.Activity;
-import com.example.insense.repository.room.categoryDB.Category;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 @RequiresApi(api = Build.VERSION_CODES.O)
 public class Clocks24H {
@@ -42,8 +39,7 @@ public class Clocks24H {
 
         circle_paint.setARGB(255,7, 229, 245);
         circle_paint.setAntiAlias(true);
-        for (Activity act: repository.ActivitiesFromTo(new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR,0,0,0),
-                new Date(Calendar.YEAR,Calendar.DAY_OF_YEAR+1,0,0,0)))
+        for (Activity act: repository.ActivitiesFromTo(LocalDateTime.now().withHour(0).withMinute(0).withSecond(0),LocalDateTime.now().withHour(0).withMinute(0).withSecond(0).plusDays(1)))
         {
             ZoneId zoneId = ZoneId.of("Europe/Moscow");
             ZonedDateTime zdt_start = ZonedDateTime.of(act.startDate, zoneId);
