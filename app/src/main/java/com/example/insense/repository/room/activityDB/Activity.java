@@ -5,13 +5,10 @@ import androidx.room.PrimaryKey;
 import androidx.room.ColumnInfo;
 import androidx.room.TypeConverters;
 
-import java.time.LocalDate;
 import com.example.insense.models.ColorCanvas;
-import com.example.insense.models.Date;
 
 import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
-import java.time.ZoneOffset;
+
 @Entity
 public class Activity {
     @PrimaryKey(autoGenerate = true)

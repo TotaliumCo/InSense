@@ -38,7 +38,7 @@ public class ListAdapter extends BaseExpandableListAdapter {
         this.navController = navController;
         for (String occupation : list_of_occupations.toArray(new String[0])) {
             List<String> list_of_real_act = map_of_occupations_activities.get(occupation);
-            list_of_real_act.add(list_of_real_act.size(), "add");
+            list_of_real_act.add(list_of_real_act.size(), "добавить");
             map_of_occupations_activities.put(occupation, list_of_real_act);
         }
     }
@@ -119,10 +119,10 @@ public class ListAdapter extends BaseExpandableListAdapter {
         Button button = (Button) convertView.findViewById(R.id.change_activity_categories);
         button.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
-            if (one_activity.equals("add")) {
+            if (one_activity.equals("добавить")) {
                 bundle.putString("occupation",list_of_occupations.get(listPosition));
             } else {
-                bundle.putString("uid", String.valueOf(App.getInstance().getActivityRepository().getDatabase().userDao().loadByName(one_activity).uid));
+                bundle.putString("uid", String.valueOf(App.getInstance().getActivityRepository().getDatabase().activityDao().loadByName(one_activity).uid));
             }
 
             navController.navigate(R.id.action_categoryFragment_to_activityFragment2, bundle);

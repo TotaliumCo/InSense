@@ -2,8 +2,11 @@ package com.example.insense.repository.room.activityDB;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import androidx.lifecycle.LiveData;
 import androidx.room.Delete;
 import androidx.room.Insert;
+import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 import androidx.room.Dao;
@@ -24,8 +27,10 @@ public interface ActivityDAO {
     @Query("SELECT * FROM Activity WHERE name IN (:name)")
     Activity loadByDay(String name);
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     void insertAll(List<Activity> activities);
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    void insert(Activity activities);
     @Update
     void updateActivity(Activity activities);
     @Delete

@@ -136,7 +136,7 @@ public class ActivityFragment extends Fragment {
                 });
 
         if (mParam1 != null) {
-            activity = App.getInstance().getActivityRepository().getDatabase().userDao().loadById(Integer.parseInt(mParam1, 10));
+            activity = App.getInstance().getActivityRepository().getDatabase().activityDao().loadById(Integer.parseInt(mParam1, 10));
             fragmentEditActivityBinding.nameOfOccupationText.setText(activity.occupation);
             fragmentEditActivityBinding.activityNameText.setText(activity.name);
             fragmentEditActivityBinding.activityDescriptionText.setText(activity.occupation);
@@ -146,12 +146,12 @@ public class ActivityFragment extends Fragment {
                 activity.name = fragmentEditActivityBinding.activityNameText.getText().toString();
                 activity.occupation = fragmentEditActivityBinding.nameOfOccupationText.getText().toString();
                 activity.description = fragmentEditActivityBinding.activityDescriptionText.getText().toString();
-                App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(activity);
+                App.getInstance().getActivityRepository().getDatabase().activityDao().updateActivity(activity);
                 NavHostFragment.findNavController(getParentFragment()).popBackStack();
 
             });
             fragmentEditActivityBinding.deleteActivity.setOnClickListener(view -> {
-                App.getInstance().getActivityRepository().getDatabase().userDao().delete(activity);
+                App.getInstance().getActivityRepository().getDatabase().activityDao().delete(activity);
                 NavHostFragment.findNavController(getParentFragment()).popBackStack();
             });
 
@@ -167,7 +167,7 @@ public class ActivityFragment extends Fragment {
                 activity.occupation = fragmentEditActivityBinding.nameOfOccupationText.getText().toString();
                 activity.description = fragmentEditActivityBinding.activityDescriptionText.getText().toString();
                 activityList.add(activity);
-                App.getInstance().getActivityRepository().getDatabase().userDao().insertAll(activityList);
+                App.getInstance().getActivityRepository().getDatabase().activityDao().insertAll(activityList);
                 NavHostFragment.findNavController(getParentFragment()).popBackStack();
             });
         }

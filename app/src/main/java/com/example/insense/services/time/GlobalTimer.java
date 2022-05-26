@@ -2,7 +2,6 @@ package com.example.insense.services.time;
 
 import android.os.Build;
 import android.os.CountDownTimer;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
@@ -34,21 +33,21 @@ public class GlobalTimer {
             public void onFinish() {
                 mIsTimerRunning = false;
                 mActivity.status = "completed";
-                App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(mActivity);
+                App.getInstance().getActivityRepository().getDatabase().activityDao().updateActivity(mActivity);
                 isTimer = false;
             }
 
         }.start();
 
         mActivity.status = "running";
-        App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(mActivity);
+        App.getInstance().getActivityRepository().getDatabase().activityDao().updateActivity(mActivity);
         mIsTimerRunning = true;
     }
 
     public void stopTimer() {
         mIsTimerRunning = false;
         mActivity.status = "stopped";
-        App.getInstance().getActivityRepository().getDatabase().userDao().updateActivity(mActivity);
+        App.getInstance().getActivityRepository().getDatabase().activityDao().updateActivity(mActivity);
         mCountDownTimer.cancel();
 
     }
