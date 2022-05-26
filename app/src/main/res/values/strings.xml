@@ -26,4 +26,20 @@
     <string name="calendar_time">\Время: %1$s\</string>
     <string name="calendar_space">\%1$s  \%2$s</string>
     <string name="something">something</string>
+    <string name="name_from_user">Название</string>
+    <string name="add_time_start_of_activity">Выберите время начала действия</string>
+    <string name="add_time_end_of_activity">Выберите время конца действия</string>
+    <string name="delete">удалить</string>
+    <string name="dialog_description">Описание</string>
+    <string name="profile">Профиль</string>
+    <string name="profile_email">Почта:</string>
+    <string name="all_activities">Всего активностей:</string>
+    <string name="analyse_category">Анализ категорий</string>
+    <string name="profile_sport">Спорт:</string>
+    <string name="profile_music">Музыка:</string>
+    <string name="profile_study">Учеба:</string>
+    <string name="profile_work">Работа:</string>
+    <string name="profile_other">Другое:</string>
+    <string name="profile_hobby">Хобби:</string>
+    <string name="profile_fsmily">Семья:</string>
 </resources>

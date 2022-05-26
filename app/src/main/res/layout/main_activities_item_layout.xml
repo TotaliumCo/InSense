@@ -23,7 +23,7 @@
         android:layout_height="50dp"
         android:elegantTextHeight="true"
         android:gravity="center"
-        android:text="Edit"
+        android:text="Изменить"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

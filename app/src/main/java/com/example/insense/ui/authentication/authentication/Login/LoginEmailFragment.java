@@ -106,13 +106,13 @@ public class LoginEmailFragment extends Fragment {
                         // Sign in success, update UI with the signed-in user's information
                         Log.d(TAG, "createUserWithEmail:success");
                         FirebaseUser user = mAuth.getCurrentUser();
-                        Toast.makeText(getContext(), "Succeeded",
+                        Toast.makeText(getContext(), "Успешно",
                                 Toast.LENGTH_SHORT).show();
                         updateUI(user);
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                        Toast.makeText(getContext(), "Failed.",
+                        Toast.makeText(getContext(), "Неуспешно.",
                                 Toast.LENGTH_SHORT).show();
                         updateUI(null);
                     }
@@ -134,13 +134,13 @@ public class LoginEmailFragment extends Fragment {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithEmail:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(getContext(), "Authentication succeeded.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Вход успешен", Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.getException());
                             count++;
-                            Toast.makeText(getContext(), "Authentication failed.",
+                            Toast.makeText(getContext(), "Вход неуспешен",
                                     Toast.LENGTH_SHORT).show();
                             if (count == 3) {
                                 fragmentLoginEmailBinding.emailSignInButton.setOnClickListener(new View.OnClickListener() {

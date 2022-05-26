@@ -12,32 +12,6 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/edit_text_mail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginBottom="384dp"
-            android:enabled="true"
-            android:hint="@string/email"
-            android:textColorHint="@color/teal_200"
-            app:boxStrokeColor="@color/teal_200"
-            app:errorEnabled="true"
-            app:layout_constraintBottom_toTopOf="@+id/edit_text_password"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/text_edit_get_mail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:textColor="@color/teal_200" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/edit_text_password"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
@@ -50,10 +24,10 @@
             app:errorEnabled="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.473"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.772">
+            app:layout_constraintVertical_bias="0.616">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_edit_get_password"
@@ -66,21 +40,20 @@
 
         <Button
             android:id="@+id/emailSignInButton"
-            android:layout_width="180dp"
-            android:layout_height="45dp"
+            android:layout_width="150dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="16dp"
             android:text="@string/enter"
             android:textColor="#101010"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/emailCreateAccountButton"
-            app:layout_constraintHorizontal_bias="0.457"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_password"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/emailCreateAccountButton"
-            android:layout_width="180dp"
-            android:layout_height="48dp"
+            android:layout_width="155dp"
+            android:layout_height="47dp"
             android:layout_marginEnd="16dp"
             android:text="@string/registration"
             android:textColor="#050505"
@@ -88,6 +61,34 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_password"
             app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/edit_text_mail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:paddingTop="30dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginBottom="5dp"
+            android:enabled="true"
+            android:hint="@string/email"
+            android:textColorHint="@color/teal_200"
+            app:boxStrokeColor="@color/teal_200"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@+id/edit_text_password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/text_edit_get_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/teal_200" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
