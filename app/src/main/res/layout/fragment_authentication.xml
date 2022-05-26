@@ -53,7 +53,7 @@
                     android:layout_height="45dp"
                     android:layout_marginBottom="236dp"
                     android:gravity="center"
-                    android:text="In Time"
+                    android:text="@string/InTime"
                     android:textColor="#28F8FF"
                     android:textSize="40sp"
                     app:layout_constraintBottom_toBottomOf="parent"
