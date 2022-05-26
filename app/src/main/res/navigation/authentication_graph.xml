@@ -13,24 +13,16 @@
         <action
             android:id="@+id/action_loginFragment_to_loginEmailFragment"
             app:destination="@id/loginEmailFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_loginGoogleFragment"
-            app:destination="@id/loginGoogleFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginEmailFragment"
-        android:name="com.example.insense.ui.authentication.authentication.Login.LoginEmailFragment"
+        android:name="com.example.insense.ui.authentication.authentication.LoginEmailFragment"
         android:label="fragment_login_email"
         tools:layout="@layout/fragment_login_email" >
         <action
             android:id="@+id/action_loginEmailFragment_to_forgotPasswordFragment"
             app:destination="@id/forgotPasswordFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/loginGoogleFragment"
-        android:name="com.example.insense.ui.authentication.authentication.Login.LoginGoogleFragment"
-        android:label="fragment_login_google"
-        tools:layout="@layout/fragment_login_google" />
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="com.example.insense.ui.authentication.authentication.Login.ForgotPasswordFragment"
