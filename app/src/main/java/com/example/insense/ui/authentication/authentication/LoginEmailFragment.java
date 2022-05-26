@@ -1,4 +1,4 @@
-package com.example.insense.ui.authentication.authentication.Login;
+package com.example.insense.ui.authentication.authentication;
 
 import android.os.Bundle;
 import android.text.TextUtils;

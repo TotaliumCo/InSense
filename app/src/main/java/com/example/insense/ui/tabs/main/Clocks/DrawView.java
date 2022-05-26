@@ -34,43 +34,36 @@ public class DrawView extends SurfaceView implements SurfaceHolder.Callback {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (App.getInstance().getGlobalTimer().getIsTimer()) {
-            if (App.getInstance().getGlobalTimer().getIsTimerRunning()) {
-                App.getInstance().getGlobalTimer().stopTimer();
-                Log.i("TIMER", "STOPPED");
-            } else {
-                App.getInstance().getGlobalTimer().startTimer();
-                Log.i("TIMER", "Started");
+        if (App.getInstance().getGlobalTimer().getmActivity() != null) {
+            if (App.getInstance().getGlobalTimer().getIsTimer()) {
+                if (App.getInstance().getGlobalTimer().getIsTimerRunning()) {
+                    App.getInstance().getGlobalTimer().stopTimer();
+                    Log.i("TIMER", "STOPPED");
+                } else {
+                    App.getInstance().getGlobalTimer().startTimer();
+                    Log.i("TIMER", "Started");
+                }
             }
         }
-
         return super.onTouchEvent(event);
     }
-
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder surfaceHolder, int i, int i1, int i2) {
-
     }
-
     @Override
     public void surfaceDestroyed(@NonNull SurfaceHolder surfaceHolder) {
         drawThread.requestStop();
     }
-
 
 }
 
 class DrawThread extends Thread {
 
     private SurfaceHolder surfaceHolder;
-
-
     private volatile boolean running = true;//флаг для остановки потока
-
     public DrawThread(Context context, SurfaceHolder surfaceHolder) {
         this.surfaceHolder = surfaceHolder;
     }
-
     public void requestStop() {
         running = false;
     }

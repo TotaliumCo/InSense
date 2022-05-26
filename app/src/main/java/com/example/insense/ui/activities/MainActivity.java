@@ -11,12 +11,11 @@ import androidx.navigation.NavGraph;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.insense.R;
-import com.example.insense.ui.authentication.authentication.Login.LoginViewModel;
+import com.example.insense.services.authentification.AuthenticationLiveData;
 
 public class MainActivity extends AppCompatActivity {
-    LoginViewModel viewModel = new LoginViewModel();
+    AuthenticationLiveData viewModel = new AuthenticationLiveData();
     private NavController navController;
-
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         NavGraph navGraph = navController.getNavInflater().inflate(getMainNavigationGraphId());
         viewModel.authenticationState.observe(this,
                 authenticationState -> {
-                    if (authenticationState == LoginViewModel.AuthenticationState.AUTHENTICATED) {
+                    if (authenticationState == AuthenticationLiveData.AuthenticationState.AUTHENTICATED) {
                         navGraph.setStartDestination(getTabsDestination());
                         navController.setGraph(navGraph);
                         navController.navigate(getTabsDestination());
@@ -53,12 +52,11 @@ public class MainActivity extends AppCompatActivity {
     private int getMainNavigationGraphId() {
         return R.navigation.main_graph;
     }
-
     private int getTabsDestination() {
         return R.id.tabsFragment;
     }
-
     private int getSignInDestination() {
         return R.id.authenticationFragment;
     }
+
 }

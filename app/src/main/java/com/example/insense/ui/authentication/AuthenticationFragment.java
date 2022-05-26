@@ -24,7 +24,6 @@ public class AuthenticationFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         fragmentAuthenticationBinding = FragmentAuthenticationBinding.inflate(inflater,container,false);
         NavHostFragment navHostFragment = (NavHostFragment) getChildFragmentManager().findFragmentById(R.id.authenticationContainer);
-        NavController navController = navHostFragment.getNavController();
         return fragmentAuthenticationBinding.getRoot();
     }
 }
