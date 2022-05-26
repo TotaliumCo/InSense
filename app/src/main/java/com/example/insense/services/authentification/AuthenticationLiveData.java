@@ -1,21 +1,20 @@
-package com.example.insense.ui.authentication.authentication.Login;
+package com.example.insense.services.authentification;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Transformations;
 import androidx.lifecycle.ViewModel;
 
-import com.example.insense.services.authentification.FirebaseUserLiveData;
 import com.google.firebase.auth.FirebaseUser;
 
 final class LoginViewModel2$$special$$inlined$map$1 implements Function {
     public final Object apply(Object it) {
         FirebaseUser user = (FirebaseUser) it;
-        return user != null ? LoginViewModel.AuthenticationState.AUTHENTICATED : LoginViewModel.AuthenticationState.UNAUTHENTICATED;
+        return user != null ? AuthenticationLiveData.AuthenticationState.AUTHENTICATED : AuthenticationLiveData.AuthenticationState.UNAUTHENTICATED;
     }
 }
 
-public class LoginViewModel extends ViewModel {
+public class AuthenticationLiveData extends ViewModel {
     public enum AuthenticationState {
         AUTHENTICATED, UNAUTHENTICATED, INVALID_AUTHENTICATION
     }

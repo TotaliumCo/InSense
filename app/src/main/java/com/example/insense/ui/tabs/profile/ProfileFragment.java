@@ -17,7 +17,7 @@ import com.example.insense.repository.OccupationRepository;
 import com.example.insense.repository.room.activityDB.Activity;
 import com.example.insense.repository.room.occupationDB.Occupation;
 import com.example.insense.repository.room.occupationDB.OccupationDAO;
-import com.example.insense.ui.authentication.authentication.Login.LoginViewModel;
+import com.example.insense.services.authentification.AuthenticationLiveData;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -26,7 +26,7 @@ import java.util.List;
 
 public class ProfileFragment extends Fragment {
     private FragmentProfileBinding fragmentProfileBinding;
-    LoginViewModel viewModel = new LoginViewModel();
+    AuthenticationLiveData viewModel = new AuthenticationLiveData();
     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     ActivityRepository repository_activity = App.instance.getActivityRepository();
     OccupationRepository repository_occupation = App.instance.getOccupationRepository();

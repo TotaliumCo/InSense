@@ -25,6 +25,6 @@
     </fragment>
     <fragment
         android:id="@+id/activityFragment2"
-        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.Activity.ActivityFragment"
+        android:name="com.example.insense.ui.tabs.categories.Category.Occupation.ActivityFragment"
         android:label="ActivityFragment" />
 </navigation>

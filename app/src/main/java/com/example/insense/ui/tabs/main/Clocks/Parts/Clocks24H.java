@@ -49,7 +49,7 @@ public class Clocks24H {
         }
         Log.i("SEG", "Clocks24H: "+segments.toString());
     }
-    @RequiresApi(api = Build.VERSION_CODES.O)
+
     public void print(Canvas canvas){
         this.canvas = canvas;
         LocalDateTime date = LocalDateTime.now();

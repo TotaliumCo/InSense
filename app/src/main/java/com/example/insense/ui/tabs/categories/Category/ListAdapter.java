@@ -97,12 +97,6 @@ public class ListAdapter extends BaseExpandableListAdapter {
                 .findViewById(R.id.listTitle);
         listOccupationTextView.setTypeface(null, Typeface.BOLD);
         listOccupationTextView.setText(one_occupation);
-     /*   listOccupationTextView.setOnLongClickListener(view -> {
-            Bundle bundle = new Bundle();
-            bundle.putString("occupation",list_of_occupations.get(listPosition));
-            navController.navigate(R.id.action_categoryFragment_to_activityFragment2,bundle);
-            return true;
-        });*/
         return convertView;
     }
 
@@ -136,7 +130,10 @@ public class ListAdapter extends BaseExpandableListAdapter {
         ListActivityTextView.setText(one_activity);
         return convertView;
     }
-
+    public void update()
+    {
+        notifyDataSetChanged();
+    }
     @Override
     public boolean isChildSelectable(int listPosition, int expandedListPosition) {
         return true;

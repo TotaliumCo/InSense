@@ -1,4 +1,4 @@
-package com.example.insense.ui.tabs.categories.Category.Occupation.Activity;
+package com.example.insense.ui.tabs.categories.Category.Occupation;
 
 import android.os.Build;
 import android.os.Bundle;
@@ -95,12 +95,13 @@ public class ActivityFragment extends Fragment {
 
                     materialTimePicker.show(getParentFragmentManager(), "fragment_tag");
                     cStart.setTimeInMillis(selection + hour * 60 * 60 * 1000 + minute * 60 * 1000);
-                    Log.i("TimePickerStart", "onCreateView: "+String.valueOf(cStart.getTimeInMillis()));
+                    Log.i("TimePickerStart", "onCreateView: " + String.valueOf(cStart.getTimeInMillis()));
                     TimeZone tz = TimeZone.getTimeZone("Africa/Monrovia");
                     ZoneId zoneId = tz.toZoneId();
                     activity.startDate = LocalDateTime.ofInstant(cStart.toInstant(), zoneId);
                     fragmentEditActivityBinding.StartTimeButton.setText(LocalDateTime.ofInstant(cStart.toInstant(), zoneId).format(DateTimeFormatter.ofPattern("HH:mm:ss   dd / MM / yyyy")));
                 });
+
         final MaterialDatePicker<Long> materialDatePickerEnd = materialDateBuilder.build();
         materialDatePickerEnd.addOnPositiveButtonClickListener(
                 selection -> {
@@ -115,7 +116,7 @@ public class ActivityFragment extends Fragment {
 
                     materialTimePicker.addOnPositiveButtonClickListener(view -> {
                         cEnd.setTimeInMillis(selection + materialTimePicker.getHour() * 60 * 60 * 1000 + materialTimePicker.getMinute() * 60 * 1000);
-                        Log.i("TimePickerEnd", "onCreateView: "+String.valueOf(cEnd.getTimeInMillis()));
+                        Log.i("TimePickerEnd", "onCreateView: " + String.valueOf(cEnd.getTimeInMillis()));
                         TimeZone tz = TimeZone.getTimeZone("Africa/Monrovia");
                         ZoneId zoneId = tz.toZoneId();
                         activity.endDate = LocalDateTime.ofInstant(cEnd.toInstant(), zoneId);
@@ -156,11 +157,15 @@ public class ActivityFragment extends Fragment {
             });
 
 
-        }else{
+        } else {
             fragmentEditActivityBinding.nameOfOccupationText.setText(mParam2);
             activity = new Activity();
-            activity.color = new ColorCanvas(255,200,140 ,89);
+            activity.color = new ColorCanvas(255, 200, 140, 89);
             List<Activity> activityList = new ArrayList<>();
+            activity.startDate = LocalDateTime.now();
+            activity.endDate = LocalDateTime.now().plusHours(1);
+            fragmentEditActivityBinding.StartTimeButton.setText(activity.startDate.format(DateTimeFormatter.ofPattern("HH:mm:ss dd / MM / yyyy")));
+            fragmentEditActivityBinding.EndTimeButton.setText(activity.startDate.format(DateTimeFormatter.ofPattern("HH:mm:ss dd / MM / yyyy")));
 
             fragmentEditActivityBinding.saveActivity2.setOnClickListener(view -> {
                 activity.name = fragmentEditActivityBinding.activityNameText.getText().toString();
