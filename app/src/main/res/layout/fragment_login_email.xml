@@ -20,6 +20,7 @@
             android:layout_marginBottom="384dp"
             android:enabled="true"
             android:hint="@string/email"
+            android:paddingTop="20dp"
             android:textColorHint="@color/teal_200"
             app:boxStrokeColor="@color/teal_200"
             app:errorEnabled="true"
@@ -50,10 +51,10 @@
             app:errorEnabled="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.526"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.772">
+            app:layout_constraintVertical_bias="0.726">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/text_edit_get_password"
@@ -66,22 +67,21 @@
 
         <Button
             android:id="@+id/emailSignInButton"
-            android:layout_width="180dp"
-            android:layout_height="45dp"
+            android:layout_width="110dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="35dp"
             android:text="@string/enter"
             android:textColor="#101010"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/emailCreateAccountButton"
-            app:layout_constraintHorizontal_bias="0.457"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_password"
             app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/emailCreateAccountButton"
-            android:layout_width="180dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="16dp"
+            android:layout_width="145dp"
+            android:layout_height="39dp"
+            android:layout_marginEnd="35dp"
             android:text="@string/registration"
             android:textColor="#050505"
             app:layout_constraintBottom_toBottomOf="@+id/emailSignInButton"
