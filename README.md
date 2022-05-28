@@ -1,2 +1,2 @@
 # InSense
-Our firts dream team project
+Our first dream team project
